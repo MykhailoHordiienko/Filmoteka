@@ -8,7 +8,7 @@
   height: 100%;
 }
 
-.modal {
+.modalA {
   z-index: 2;
   position: fixed;
   width: 250px;
@@ -20,31 +20,37 @@
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  background-image: url(../images/abstract-background.jpg);
-  transition: transform var(--time-duration) var(--time-function);
+  background-image:linear-gradient(to right bottom, rgb(26, 25, 25),rgb(80, 1, 14));
+  transition: transform var(--time-duration);
   .backdrop.is-hidden & {
     transform: translate(-50%, -50%) scale(0);
   }
 
-  @include desktop {
-    width: 300px;
-    min-height: 250px;
-  }
+  // @include desktop {
+  //   width: 300px;
+  //   min-height: 250px;
+  // }
 }
 
 .modal__close-btn {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
+  border: none;
   position: absolute;
+  fill:#FFFFFF;
   top: 10px;
   right: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--background-color);
+  background: none;
   padding: 0;
+  transition: transform var(--time-duration) var(--time-function);
+  &:hover, &:focus {
+    transform:scale(1.2) ;
+  }
 }
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(0);
@@ -69,15 +75,48 @@
 }
 
 .login-form label {
+  color: #FFFFFF;
+  text-align: center;
   margin-bottom: 16px;
 }
+.login-form input{
+  font-weight: 200;
+  margin-top: 5px;
+  color: #FFFFFF;
+background-color: #ffffff18;
+}
+.login-form button{
+  margin-top: 30px;
+}
+
+.login-form button {
+background-color:rgba(240, 248, 255, 0);
+border-color: var(--background-color);
+  color: #FFFFFF;
+  transition: background-color var(--time-duration) var(--time-function),
+  border-color var(--time-duration) var(--time-function);
+  &:hover,&:focus{
+    border-color: #FF6B02;
+    background-color: #FF6B02;
+  }
+}
+
 
 .login-form input,
 .login-form button {
+ 
   width: 100%;
   padding: 4px;
   font: inherit;
 }
+.login-form label,
+.login-form input,
+.login-form button{
+  border-radius: 10px;
+  
+}
+
+
 .boxsign {
 
   margin-top: 30px;
@@ -93,4 +132,58 @@ background: none;
 .container{
 
   width: 1200px
+}
+ul,
+ol {
+  z-index: 4;
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
+}
+li {
+  list-style-type: none;
+}
+.social-list {
+  display: flex;
+  justify-content: center;
+ 
+}
+.social-list__item {
+  width: 44px;
+  height: 44px;
+  & + & {
+    margin-left: 30px;
+  }
+}
+
+.social-list__icon {
+  width: 20px;
+  height: 20px;
+}
+
+.social-list__link {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border-color:var(--background-color) ;
+  @include centerFlex();
+  background-color: rgba(255, 255, 255, 0);
+  fill: var(--background-color);
+
+
+  transition: background-color var(--time-duration) var(--time-function),
+    fill var(--time-duration) var(--time-function);
+  &:hover,
+  &:focus {
+   border-color: var(--background-color);
+    
+  }
+  &--blue:hover, &--blue:focus{
+    border-color: #0000FF;
+    background-color: #0000FF;
+  }
+  &--orange:hover, &--orange:focus {
+    border-color: #FF6B02;
+    background-color: #FF6B02;
+  }
 }
