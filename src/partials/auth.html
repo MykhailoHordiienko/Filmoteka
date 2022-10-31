@@ -1,0 +1,53 @@
+
+<div class="container">
+<div  data-opensign class="sign">Sign In</div>
+<button type="button" class="is-hidden sign" data-signout>Sign Out</button>
+<div class="backdrop is-hidden" data-backdrop>
+  <div class="modal">
+    <button type="submit" class="modal__close-btn" data-modal-close>
+      <svg class="modal__close-icon" width="30px" height="30px">
+        <use href="./images/icon.svg#icon-close"></use>
+      </svg>
+    </button>
+    <form class="login-form">
+      <label>
+        Email
+        <input type="email" name="email" data-email />
+      </label>
+      <label>
+        Password
+        <input type="password" name="password" data-password />
+      </label>
+      <button type="submit" data-signin>Sign In</button>
+      <button type="submit" class="signup" data-signup>Sign Up</button>
+    </form>
+    <div class="boxsign">
+      <ul class="social-list">
+        <li class="social-list__item">
+          <button
+            type="submit"
+            class="social-list__link social-list__link--gray"
+            data-google
+          >
+            <svg class="social-list__icon" width="20px" height="20px">
+              <use href="./images/icon.svg#icon-google"></use>
+            </svg>
+          </button>
+        </li>
+        <li class="social-list__item">
+          <button
+            type="button"
+            class="social-list__link social-list__link--gray"
+            data-fasebook
+          >
+            <svg class="social-list__icon" width="20px" height="20px">
+              <use href="./images/icon.svg#icon-facebook"></use>
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+<script src="./Js/auth.js" type="module"></script>
