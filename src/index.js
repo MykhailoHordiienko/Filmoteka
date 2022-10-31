@@ -1,0 +1,1 @@
+import './Js/modal-team-info.js';
