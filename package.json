@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "firebase": "^9.13.0",
+    "lodash.debounce": "^4.0.8",
     "modern-normalize": "^1.1.0"
   },
   "devDependencies": {
