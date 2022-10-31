@@ -1,0 +1,71 @@
+.container {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (min-width: 320px) {
+    width: 320px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 1024px;
+  }
+}
+.films {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -32px;
+    margin-bottom: -32px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    margin-left: -16px;
+  }
+}
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+.search-form__error {
+  display: none;
+  padding-top: 40px;
+  font-size: 24px;
+  line-height: 1.14;
+  text-align: center;
+  color: #ff001b;
+}
+.gallery {
+  padding-top: 20px;
+  padding-bottom: 40px;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+.gallery.wrong {
+  background-image: url(../images/depositphotos_94342042-stock-illustration-pop-art-comics-style.jpeg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: auto auto;
+  padding-top: 230px;
+  padding-bottom: 230px;
+}
