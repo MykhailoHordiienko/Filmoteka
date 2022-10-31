@@ -1,0 +1,2 @@
+(()=>{const e={openModalBtn:document.querySelector("[data-modal-open-team]"),closeModalBtn:document.querySelector("[data-modal-close-team]"),modal:document.querySelector("[data-modal-team]")};function t(){event.preventDefault(),e.modal.classList.toggle("is-hidden")}e.openModalBtn.addEventListener("click",t),e.closeModalBtn.addEventListener("click",t)})();
+//# sourceMappingURL=index.0144b4b7.js.map
