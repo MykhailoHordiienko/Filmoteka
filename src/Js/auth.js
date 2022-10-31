@@ -71,6 +71,7 @@ function sigInSystem(event) {
     })
     .catch(error => {
       const errorCode = error.code;
+      console(error.code)
       const errorMessage = error.message;
     });
 }
@@ -111,7 +112,7 @@ function signGoogleSystems(event) {
       // ...
     });
 }
-function signFaceSystems() {
+function signFaceSystems(event) {
   event.preventDefault;
   signInWithPopup(auth, provider1)
     .then(result => {
@@ -145,4 +146,4 @@ refs.signUpBtn.addEventListener('click', createInSystem);
 refs.signOutBtn.addEventListener('click', signOutSystems);
 refs.googleBtn.addEventListener('click', signGoogleSystems);
 refs.faseBtn.addEventListener('click', signFaceSystems);
-//
+
