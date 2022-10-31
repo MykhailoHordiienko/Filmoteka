@@ -2,7 +2,7 @@
   position: fixed;
   top: 0;
   z-index: 1;
-  transition: opacity 250ms, visibility 250ms;
+  transition: opacity var(--time-duration), visibility var(--time-duration);
   background: rgba(0, 0, 0, 0.2);
   width: 100%;
   height: 100%;
@@ -20,8 +20,8 @@
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  background:linear-gradient(toright tobottom black,white);
-  transition: transform 250ms;
+  background-image: url(../images/abstract-background.jpg);
+  transition: transform var(--time-duration) var(--time-function);
   .backdrop.is-hidden & {
     transform: translate(-50%, -50%) scale(0);
   }
@@ -43,7 +43,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: var(--background-color);
   padding: 0;
 }
 .backdrop.is-hidden .modal {
@@ -91,5 +91,6 @@ border: none;
 background: none;
 }
 .container{
+
   width: 1200px
 }
