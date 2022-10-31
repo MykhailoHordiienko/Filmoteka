@@ -1,0 +1,48 @@
+.container {
+	max-width: 679px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.pagination ul {
+	display: flex;
+	padding: 8px;
+
+}
+
+.pagination ul li {
+	list-style: none;
+	line-height: 45px;
+	text-align: center;
+	font-size: 12px;
+	font-weight: 500;
+	cursor: pointer;
+	border-radius: 10px;
+	transition: all 0.3s ease;
+}
+
+.pagination ul li.numb {
+	height: 45px;
+	width: 45px;
+	margin: 0 auto;
+}
+
+.pagination ul li.dots {
+	font-size: 22px;
+	cursor: default;
+
+}
+
+.pagination ul li.btn {
+	background-color: #F7F7F7;
+	padding: 0 20px;
+	border-radius: 10px;
+}
+
+.pagination ul li.active,
+.pagination ul li.numb:hover,
+.pagination ul li.btn:hover {
+	background-color: #FF6B08;
+	color: #fff;
+}

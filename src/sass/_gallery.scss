@@ -1,0 +1,139 @@
+.container {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (min-width: 320px) {
+    width: 320px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 1024px;
+  }
+}
+.container > .gallery {
+  padding-top: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .container > .gallery {
+    padding-top: 30px;
+  }
+
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+
+    // margin-top: -30px;
+    margin-left: -30px;
+  }
+}
+
+/* -------- FILM CARD STYLES -------- */
+.card {
+  transition: 0.5s linear;
+
+  border-radius: 5px;
+  padding: 5px;
+  padding-bottom: 10px;
+}
+
+.card:hover,
+.card:focus {
+  transform: scale(1.05);
+  box-shadow: 4px 3px 12px -1px rgba(255, 107, 8, 0.5);
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+
+  border-radius: 5px;
+
+  object-fit: cover;
+
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.card-img:hover,
+.card-img:focus {
+  border-radius: initial;
+}
+
+.film {
+  font-family: 'Roboto';
+  font-size: 12px;
+  line-height: 1.34;
+  font-weight: 500;
+  color: var(--accent-color);
+}
+
+.film-title {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.34;
+  color: #000;
+  text-transform: uppercase;
+}
+
+.desc-wraper {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.film-line {
+  margin-right: 2px;
+  margin-left: 2px;
+}
+
+.film-release {
+  margin-right: 10px;
+}
+
+.film-average {
+  display: block;
+  background-color: var(--accent-color);
+  color: #fff;
+
+  padding: 0 9px;
+  border-radius: 5px;
+
+  &.is-hidden {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .card {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .card {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: calc(100% / 2 - 30px);
+    margin-top: 30px;
+    margin-left: 30px;
+  }
+
+  .card-img {
+    height: 398px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .card {
+    flex-basis: calc(100% / 3 - 30px);
+  }
+}
