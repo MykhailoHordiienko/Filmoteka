@@ -1,0 +1,44 @@
+@mixin font($fw, $fs, $lh, $ls, $col) {
+  font-weight: $fw;
+  font-size: $fs;
+  line-height: $lh;
+  letter-spacing: $ls;
+  color: $col;
+}
+@mixin centerFlex($type: flex) {
+  display: $type;
+  justify-content: center;
+  align-items: center;
+}
+@mixin gridFlex($num: 3, $ml: 30px) {
+  flex-basis: calc(100% / $num - $ml);
+  margin-left: $ml;
+}
+
+@mixin first_item_gridFlex($type: flex, $wr: wrap, $ml: -30px) {
+  display: $type;
+  flex-wrap: $wr;
+  margin-left: $ml;
+}
+@mixin mobile {
+  @media screen and (min-width: 480px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}
+@mixin retina {
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    @content;
+  }
+}
