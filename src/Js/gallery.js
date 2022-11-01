@@ -1,4 +1,4 @@
-// import cardTpl from './card.hbs';
+// import cardTpl from './card';
 import debounce from 'lodash.debounce';
 import fetchApiFilms from './apiService';
 import { startSpin, stopSpin } from './spinner';
