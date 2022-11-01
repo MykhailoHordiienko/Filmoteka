@@ -1,5 +1,7 @@
 import { refs } from './refs';
+import { ERROR_CODES} from './erorr';
 import { initializeApp } from 'firebase/app';
+import Notiflix from 'notiflix';
 
 import {
   getAuth,
@@ -20,6 +22,17 @@ const firebaseConfig = {
   appId: '1:747352375066:web:bfd52aa1c7f0703dcff6a3',
   measurementId: 'G-XPVPECFXHK',
 };
+ function getKeyByValue(value) {
+
+  for(let err  in ERROR_CODES) {
+
+      if(ERROR_CODES.hasOwnProperty(err)) {
+           if(ERROR_CODES[err] === value){
+               return err;
+              }
+      }
+  }
+}
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -36,10 +49,14 @@ function setParameter(value) {
   refs.signBtn.innerText = value;
   refs.inputEmail.value = '';
   refs.inputPass.value = '';
+  refs.signBtn.classList.add('nohover');
   refs.signBtn.setAttribute('disabled', 'disabled');
   refs.signOutBtn.classList.toggle('is-hidden');
+  Notiflix.Notify.success('Login is complete')
   closeModal();
 }
+
+
 function createInSystem(event) {
   event.preventDefault();
   const inEmail = refs.inputEmail.value;
@@ -52,10 +69,8 @@ function createInSystem(event) {
       return user;
     })
     .catch(error => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorCode, errorMessage);
-      // ..
+      Notiflix.Notify.failure( getKeyByValue(error.code));
+
     });
 }
 function sigInSystem(event) {
@@ -64,26 +79,29 @@ function sigInSystem(event) {
   const inPass = refs.inputPass.value;
   signInWithEmailAndPassword(auth, inEmail, inPass)
     .then(userCredential => {
-      // Signed in
+
       const user = userCredential.user;
-      setParameter(user);
-      // ...
+      setParameter(user.email);
+
     })
     .catch(error => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
+
+      Notiflix.Notify.failure( getKeyByValue(error.code));
+  
+
     });
 }
 function signOutSystems() {
   signOut(auth)
     .then(() => {
-      // Sign-out successful.
       refs.signBtn.innerText = 'Sign In';
       refs.signBtn.removeAttribute('disabled');
       refs.signOutBtn.classList.toggle('is-hidden');
+      refs.signBtn.classList.remove('nohover');
     })
     .catch(error => {
-      // An error happened.
+      Notiflix.Notify.failure( getKeyByValue(error.code));
+  
     });
 }
 function signGoogleSystems(event) {
@@ -91,49 +109,22 @@ function signGoogleSystems(event) {
 
   signInWithPopup(auth, provider)
     .then(result => {
-      // This gives you a Google Access Token. You can use it to access the Google API.
-      /*   const credential = GoogleAuthProvider.credentialFromResult(result);
-      const token = credential.accessToken; */
-      // The signed-in user info.
       const user = result.user;
-
       setParameter(user.displayName);
-      // ...
     })
     .catch(error => {
-      // Handle Errors here.
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      // The email of the user's account used.
-      const email = error.customData.email;
-      // The AuthCredential type that was used.
-      const credential = GoogleAuthProvider.credentialFromError(error);
-      // ...
+      Notiflix.Notify.failure( getKeyByValue(error.code));
     });
 }
-function signFaceSystems() {
+function signFaceSystems(event) {
   event.preventDefault;
   signInWithPopup(auth, provider1)
     .then(result => {
-      // The signed-in user info.
       const user = result.user;
       setParameter(user.displayName);
-      // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-      /*   const credential = FacebookAuthProvider.credentialFromResult(result);
-      const accessToken = credential.accessToken;
- */
-      // ...
     })
     .catch(error => {
-      // Handle Errors here.
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      // The email of the user's account used.
-      const email = error.customData.email;
-      // The AuthCredential type that was used.
-      const credential = FacebookAuthProvider.credentialFromError(error);
-
-      // ...
+      Notiflix.Notify.failure( getKeyByValue(error.code));
     });
 }
 console.log(refs.googleBtn);
@@ -145,4 +136,3 @@ refs.signUpBtn.addEventListener('click', createInSystem);
 refs.signOutBtn.addEventListener('click', signOutSystems);
 refs.googleBtn.addEventListener('click', signGoogleSystems);
 refs.faseBtn.addEventListener('click', signFaceSystems);
-//
