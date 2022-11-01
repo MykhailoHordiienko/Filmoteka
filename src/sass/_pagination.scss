@@ -1,48 +1,102 @@
-.container {
-	max-width: 679px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+#counter {
+  height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pag_btn {
+  width: 40px;
+  height: 100%;
+  border-radius: 5px;
+  background-color: var(--footer-bg-color);
+  border: none;
+}
+.pag_btn:hover {
+  background-color: var(--accent-color);
+  color: var(--main-color);
 }
 
-.pagination ul {
-	display: flex;
-	padding: 8px;
-
+.pag_list {
+  display: flex;
+  list-style-type: none;
+  margin: 0 12px;
+  height: 100%;
+}
+.pag_item:hover,
+.pag_item:focus {
+  cursor: pointer;
+  background-color: var(--accent-color);
+  color: white;
 }
 
-.pagination ul li {
-	list-style: none;
-	line-height: 45px;
-	text-align: center;
-	font-size: 12px;
-	font-weight: 500;
-	cursor: pointer;
-	border-radius: 10px;
-	transition: all 0.3s ease;
+.pag_item__current {
+  cursor: pointer;
+  background-color: var(--accent-color);
+  color: white;
 }
 
-.pagination ul li.numb {
-	height: 45px;
-	width: 45px;
-	margin: 0 auto;
+.pagination.container {
+  padding-top: 10px;
+  padding-bottom: 40px;
 }
 
-.pagination ul li.dots {
-	font-size: 22px;
-	cursor: default;
-
+.pagination.is-hidden {
+  display: none;
 }
 
-.pagination ul li.btn {
-	background-color: #F7F7F7;
-	padding: 0 20px;
-	border-radius: 10px;
+.pag_item.is-hidden {
+  display: none;
 }
 
-.pagination ul li.active,
-.pagination ul li.numb:hover,
-.pagination ul li.btn:hover {
-	background-color: #FF6B08;
-	color: #fff;
+.pag_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  margin: 0;
+  border-radius: 5px;
+}
+.pag_text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+}
+.pag_acc {
+  width: 40px;
+  margin: 0;
+  border-radius: 5px;
+  color: var(--main-color);
+  background-color: var(--accent-color);
+}
+
+.pag_item-dots {
+  &:hover {
+    background-color: var(--main-color);
+    cursor: default;
+
+    color: var(--primary-color);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .pagination.container {
+    padding-top: 40px;
+    padding-bottom: 60px;
+    .pag_item {
+      margin: 0 8px;
+    }
+  }
+}
+@media screen and (min-width: 1024px) {
+  .pagination.container {
+    padding-top: 40px;
+  }
+  .pag_item {
+    margin: 0 10px;
+  }
 }
