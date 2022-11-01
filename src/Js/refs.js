@@ -1,6 +1,6 @@
 export const refs = {
   signBtn: document.querySelector('[data-opensign]'),
-  signOutBtn: document.querySelector('button[data-signout]'),
+  signOutBtn: document.querySelector('[data-signout]'),
   closeBtn: document.querySelector('button[data-modal-close]'),
   bckDrop: document.querySelector('div[data-backdrop]'),
   signInBtn: document.querySelector('button[data-signin]'),

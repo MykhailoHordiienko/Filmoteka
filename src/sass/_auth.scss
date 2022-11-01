@@ -11,8 +11,8 @@
 .modalA {
   z-index: 2;
   position: fixed;
-  width: 250px;
-  min-height: 150px;
+  width: 280px;
+  min-height: 180px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
@@ -26,10 +26,10 @@
     transform: translate(-50%, -50%) scale(0);
   }
 
-  // @include desktop {
-  //   width: 300px;
-  //   min-height: 250px;
-  // }
+  @include desktop {
+    width: 400px;
+ min-height: 300px;
+  }
 }
 
 .modal__close-btn {
@@ -47,6 +47,7 @@
   align-items: center;
   background: none;
   padding: 0;
+  cursor: pointer;
   transition: transform var(--time-duration) var(--time-function);
   &:hover, &:focus {
     transform:scale(1.2) ;
@@ -69,15 +70,26 @@
 }
 
 .login-form {
-  max-width: 320px;
+  max-width: 240px;
   display: flex;
   flex-direction: column;
+  
+  @include desktop {
+    width: 480px;
+  
+  }
 }
 
 .login-form label {
+  width: 200px;
   color: #FFFFFF;
   text-align: center;
   margin-bottom: 16px;
+  
+  @include desktop {
+    width: 320px;
+   
+  }
 }
 .login-form input{
   font-weight: 200;
@@ -98,6 +110,7 @@ border-color: var(--background-color);
   &:hover,&:focus{
     border-color: #FF6B02;
     background-color: #FF6B02;
+    cursor: pointer;
   }
 }
 
@@ -105,9 +118,14 @@ border-color: var(--background-color);
 .login-form input,
 .login-form button {
  
-  width: 100%;
+  width: 200px;
   padding: 4px;
   font: inherit;
+  
+  @include desktop {
+    width: 320px;
+  
+  }
 }
 .login-form label,
 .login-form input,
@@ -125,9 +143,19 @@ border-color: var(--background-color);
   justify-content: space-around;
 }
  .sign {
-  margin: 0 auto;
+  margin: 30px auto;
+  padding: 10px;
+color: #FFFFFF;
 border: none;
-background: none;
+background-color:  rgba(10, 10, 10, 0.0);
+border-radius: 10px;
+transition: background-color var(--time-duration) var(--time-function),
+border-color var(--time-duration) var(--time-function);
+cursor: pointer;
+&:hover,&:focus{
+  border-color: #FF6B02;
+  background-color: #FF6B02;
+}
 }
 .container{
 
@@ -175,15 +203,23 @@ li {
     fill var(--time-duration) var(--time-function);
   &:hover,
   &:focus {
+    cursor: pointer;
    border-color: var(--background-color);
     
   }
   &--blue:hover, &--blue:focus{
     border-color: #0000FF;
     background-color: #0000FF;
+    cursor: pointer;
   }
   &--orange:hover, &--orange:focus {
     border-color: #FF6B02;
     background-color: #FF6B02;
+    cursor: pointer;
   }
+}
+.nohover{
+  &:hover, &:focus {
+    background-color:  rgba(10, 10, 10, 0.0);
+}
 }
