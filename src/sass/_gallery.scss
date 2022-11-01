@@ -97,6 +97,7 @@ height: 455px;
   @include font(500, 12px, 1.33, null,var(--accent-color));
 }
 @include desktop{
+  height: 48px;
   @include font(500, 20px, 1.2, null,var(--accent-color));
 }
 
