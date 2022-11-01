@@ -8,7 +8,7 @@
   refs.openModalBtn.addEventListener('click', toggleModal);
   refs.closeModalBtn.addEventListener('click', toggleModal);
 
-    function toggleModal(event) {
+  function toggleModal(event) {
     event.preventDefault();
     refs.modal.classList.toggle('is-hidden__footer');
   }
