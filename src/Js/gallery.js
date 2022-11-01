@@ -1,6 +1,6 @@
-// import cardTpl from './card.hbs';
-import debounce from 'lodash.debounce';
 
+// import cardTpl from './card';
+import debounce from 'lodash.debounce';
 import fetchApiFilms from './apiService';
 import { startSpin, stopSpin } from './spinner';
 import { renderInfoMsg, hideInfoImg, renderEmptyGalleryMsg } from './informing';
@@ -41,11 +41,7 @@ function createPopularMoviesGallery() {
   getMaxPages();
   startSpin();
 
-  fetchFilms
-    .fetchPopularMovies()
-    .then(makeGalleryMarkup)
-    .catch(console.log)
-    .finally(stopSpin);
+  fetchFilms.fetchPopularMovies().then(makeGalleryMarkup).catch(console.log).finally(stopSpin);
 }
 
 // ----- home рендер по результату пошуку
@@ -118,12 +114,8 @@ function preventOnEnterSubmit(event) {
 }
 
 function removeHiddenfromCardEl() {
-  document
-    .querySelectorAll('.film-average')
-    .forEach(el => el.classList.remove('is-hidden'));
-  document
-    .querySelectorAll('.card-delete-btn')
-    .forEach(el => el.classList.remove('is-hidden'));
+  document.querySelectorAll('.film-average').forEach(el => el.classList.remove('is-hidden'));
+  document.querySelectorAll('.card-delete-btn').forEach(el => el.classList.remove('is-hidden'));
   refs.pagination.classList.add('is-hidden'); //для скриття пагинації розкоментувати
 }
 
@@ -134,3 +126,4 @@ export {
   renderLibraryGallery,
   createSearchMoviesGallery,
 };
+
