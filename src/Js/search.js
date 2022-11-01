@@ -1,10 +1,10 @@
-@@ -1,127 +0,0 @@
-// import cardTpl from '../templates/card-template.hbs';
-// import debounce from 'lodash.debounce';
-// import fetchApiFilms from './apiService';
-// import { startSpin, stopSpin } from './spinner';
-// import { renderInfoMsg, hideInfoImg, renderEmptyGalleryMsg } from './notifications';
-// import { getMaxPages, resetPagination } from './pagination';
+
+import cardTpl from '../templates/card-template.hbs';
+import debounce from 'lodash.debounce';
+import fetchApiFilms from './apiService';
+import { startSpin, stopSpin } from './spinner';
+import { renderInfoMsg, hideInfoImg, renderEmptyGalleryMsg } from './notifications';
+import { getMaxPages, resetPagination } from './pagination';
 
 const fetchFilms = new fetchApiFilms();
 
