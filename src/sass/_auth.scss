@@ -152,6 +152,9 @@ border-radius: 10px;
 transition: background-color var(--time-duration) var(--time-function),
 border-color var(--time-duration) var(--time-function);
 cursor: pointer;
+&+&{
+  margin-left: 0px;
+}
 &:hover,&:focus{
   border-color: #FF6B02;
   background-color: #FF6B02;
