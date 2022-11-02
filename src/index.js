@@ -1,4 +1,5 @@
 import './Js/modal-team-info.js';
+import './Js/pagination';
 // import './Js/button';
 // import './Js/pagination';
 import './Js/informing';
