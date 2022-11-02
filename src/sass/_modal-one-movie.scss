@@ -1,24 +1,24 @@
-// .backdrop {
-//   position: fixed;
-//   z-index: 99;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   overflow: scroll;
-//   background-color: rgba(0, 0, 0, 0.2);
-//   transition: opacity 300ms cubic-bezier(0.4, 0, 0.2, 1),
-//     visibility 500ms cubic-bezier(0.4, 0, 0.2, 1);
-// }
+.backdrop-modal {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity 300ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-.modal {
+.modal-movie {
   display: flex;
   flex-direction: column;
   // justify-content: center;
   align-items: center;
   position: absolute;
-  width: 95vw;
-  min-height: 609px;
+  // width: 95vw;
+  // min-height: 609px;
   top: 20px;
   left: 50%;
   transform-origin: top left;
@@ -29,7 +29,7 @@
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px;
   padding: 48px 20px 40px 20px;
-  overflow-y: scroll;
+  // overflow-y: scroll;
   @include mobile {
     min-width: 280px;
     height: 940px;
@@ -39,12 +39,14 @@
     height: 552px;
     flex-direction: row;
     align-items: start;
+    padding: 40px 72px 40px 36px;
   }
   @include desktop {
     width: 806px;
     height: 558px;
-    // top: 50%;
-    // transform: translate(-50%, -50%) scale(1);
+    padding: 40px 12px 40px 12px;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
   }
 }
 
@@ -65,18 +67,23 @@
   align-items: center;
   justify-content: center;
   padding: 0;
-  // width: 30px;
-  // height: 30px;
+  width: 30px;
+  height: 30px;
   border: 0;
   // border: 1px solid rgba(0, 0, 0, 0.1);
   // border-radius: 50%;
+  color: #000000;
   background-color: #ffffff;
   cursor: pointer;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  &:hover,
-  &:focus {
-    fill: var(--first-accent-color);
-  }
+  // &:hover,
+  // &:focus {
+  //   // fill: var(--first-accent-color);
+  // }
+}
+
+.modal-close-svg {
+  fill: #000000;
 }
 
 .modal-poster {
@@ -96,16 +103,17 @@
 .modal-poster__img {
   display: block;
   // max-width: 100%;
-  width: 240px;
+  aspect-ratio: auto;
+  width: 238px;
   height: 357px;
   border-radius: 5px;
   object-fit: fill;
   @include tablet {
-    width: 264px;
+    width: 249px;
     height: 374px;
   }
   @include desktop {
-    width: 375px;
+    width: 318px;
     height: 478px;
     // top: 50%;
     // transform: translate(-50%, -50%) scale(1);

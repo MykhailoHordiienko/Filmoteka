@@ -5,6 +5,7 @@ import fetchApiFilms from './apiService';
 import { startSpin, stopSpin } from './spinner';
 import { renderInfoMsg, hideInfoImg, renderEmptyGalleryMsg } from './informing';
 import { getMaxPages, resetPagination } from './pagination';
+import  { cardTpl } from './card';
 
 
 const fetchFilms = new fetchApiFilms();
