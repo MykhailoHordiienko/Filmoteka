@@ -1,5 +1,7 @@
+import {filmsTemps} from './buttons';
 export  function cardTpl(movies) {
   console.log(movies);
+  filmsTemps.setFilms(movies);
   return movies.map(movi => 
   `<li class="card">
   <div class="films__img-wrapper">
@@ -13,5 +15,5 @@ export  function cardTpl(movies) {
     </div>
   </div>
 </li>`
- ).join(" ");
+).join(" ");
   }

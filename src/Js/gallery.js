@@ -7,6 +7,7 @@ import { renderInfoMsg, hideInfoImg, renderEmptyGalleryMsg } from './informing';
 import { getMaxPages, resetPagination } from './pagination';
 import  { cardTpl } from './card';
 
+
 const fetchFilms = new fetchApiFilms();
 
 const refs = {
