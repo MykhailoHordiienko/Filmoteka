@@ -22,6 +22,7 @@ const refs = {
     
     export const filmsTemps = { 
         filmArray:[],
+        filmId:'',
         resetFilms(){
             this.filmArray = [];
         },
@@ -29,7 +30,10 @@ const refs = {
             this.resetFilms();
             this.filmArray = arrayA;
             console.log(this.filmArray);
-        }
+        },
+        setFilmId(id){
+            this.filmId=id;
+        },
     }
     
     const LOCAL_STORAGE_KEY = 'films';

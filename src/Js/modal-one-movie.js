@@ -1,6 +1,6 @@
 import moviedbApiService from './moviedb-api-service';
 import modalMarkup from './modalMarkup';
-
+import {filmsTemps} from './buttons';
 const body = document.querySelector('body');
 const modal = document.querySelector('.backdrop');
 const gallery = document.querySelector('js-gallery');
@@ -14,6 +14,7 @@ function onClick(e) {
     return;
   }
   selectedMovie.query = e.target.datafilmid;
+  
   selectedMovie.fetchMovie().then(createModal);
 }
 
