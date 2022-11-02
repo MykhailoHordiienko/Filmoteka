@@ -21,14 +21,9 @@
     </nav>
   </div>
 
-  <form class="input-container">
-    <input
-      type="text"
-      id="search-box"
-      class="search-box-input"
-      placeholder="Movie search"
-      autocomplete="off"
-    />
+  <form class="input-container header__form">
+    <input type="text" id="search-box" class="search-box-input header__form-input" placeholder="Movie search"
+      autocomplete="off" />
     <button type="submit" class="input-search-button">
       <svg width="12" height="12" class="search-box-input-icon">
         <use href="./images/symbol-defs.svg#icon-search"></use>
@@ -36,8 +31,8 @@
     </button>
   </form>
 
-  <div class="header-error-container is-hidden">
-    <p>
+  <div class="header__error js-header__error ">
+    <p class="header__error-text is-hidden">
       Search result not successful. Enter the correct movie name and try again
     </p>
   </div>
