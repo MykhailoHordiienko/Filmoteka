@@ -20,12 +20,12 @@ function onClick(e) {
 function createModal(movie) {
   body.insertAdjacentHTML('beforeend', modalMarkup(movie));
 
-  const modalCloseBtn = document.querySelector('.modal-close');
+  const modalCloseBtn = document.querySelector('.modal-close-img');
   const modalCloseBackdrop = document.querySelector('.backdrop-modal');
 
   document.addEventListener('keydown', escCheck);
-  modalCloseBackdrop.addEventListener('click', removeModal);
-  modalCloseBtn.addEventListener('click', removeModal);
+  modalCloseBtn.addEventListener('click', closeBtn);
+  modalCloseBackdrop.addEventListener('click', onBackdropClick);
 }
 
 function removeModal() {
@@ -35,9 +35,9 @@ function removeModal() {
 
   modalConainer.remove();
 
-  modalCloseBtn.removeEventListener('click', removeModal);
-  modalCloseBackdrop.removeEventListener('click', removeModal);
   document.removeEventListener('keydown', escCheck);
+  modalCloseBtn.removeEventListener('click', closeBtn);
+  modalCloseBackdrop.removeEventListener('click', onBackdropClick);
 }
 
 function escCheck(e) {
@@ -45,4 +45,19 @@ function escCheck(e) {
     return;
   }
   removeModal();
+}
+
+function closeBtn(e) {
+  // console.log(e.target);
+  if (e.target.nodeName !== 'IMG') {
+    return;
+  }
+
+  removeModal();
+}
+
+function onBackdropClick(e) {
+  if (e.currentTarget === e.target) {
+    removeModal();
+  }
 }

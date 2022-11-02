@@ -98,6 +98,7 @@ padding-bottom: 10px;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.2);
+    z-index: 5;
 }
 
 .footer-backdrop.is-hidden__footer {
@@ -109,6 +110,7 @@ padding-bottom: 10px;
 .footer-backdrop.is-hidden__footer.modal__footer {
     transform: scale(0, 9) translate(-50%, -50%);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+   
 }
 
 .modal__footer {
@@ -125,7 +127,7 @@ padding-bottom: 10px;
         left: 50%;
         transform: translate(-50%, -50%) scale(1);
         opacity: 1;
-        transition: opacity 250ms var(--transition-timing-function);
+        transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 999;
     }
     @media screen and (min-width: 320px) and (max-width: 424px){
@@ -166,15 +168,69 @@ padding-bottom: 10px;
     fill: #FF6B08;
 }
 
-/* .modal__text {
+ .team-name {
     display: block;
     align-items: center;
     justify-content: center;
     margin-bottom: 12px;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 23px;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 13px;
     text-align: center;
     letter-spacing: 0.03em;
-    color: ;
-} */
+    color: #545454;
+} 
+.visually-hidden {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+}
+.team__photo{
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        margin-left: auto;
+        margin-right: auto;
+ @media screen and (min-width: 320px) and (max-width: 767px) {
+     margin-bottom: 29px;
+    width: 55px;
+    height: 55px;
+ }
+
+ @media screen and (min-width: 768px) and (max-width: 1023px){
+     margin-bottom: 19px;
+ }
+
+ @media screen and (min-width: 1024px) {
+     margin-bottom: 15px;
+ }
+       
+    }
+
+ .team-link{
+    border-color: transparent;
+    border: 1px;
+    text-decoration: none;
+ }
+ .team-link:hover,
+ .team-link:focus {
+     border-color: #FF6B08;
+     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+ }
+.team{
+    display: flex;
+    flex-wrap: wrap;
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+            flex-basis: calc((100% - 2 * 30px) / 2);
+        }
+    
+        @media screen and (min-width: 1200px) {
+            flex-basis: calc((100% - 3 * 30px) / 4);
+        }
+}
+// .team-member{
+//     display: flex;
+//     flex-direction: column;
+// }
