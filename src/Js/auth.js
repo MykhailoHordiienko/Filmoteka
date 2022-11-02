@@ -127,7 +127,6 @@ function signFaceSystems(event) {
       Notiflix.Notify.failure( getKeyByValue(error.code));
     });
 }
-console.log(refs.googleBtn);
 
 refs.signBtn.addEventListener('click', openModal);
 refs.closeBtn.addEventListener('click', closeModal);
