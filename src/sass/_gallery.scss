@@ -2,9 +2,26 @@
   padding-top: 20px;
 }
 
+.info-notify 	{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 30px;
+}
+
+
+.info-image	{
+	width: 320px;
+}
+
 @media screen and (min-width: 768px) {
   .container > .gallery {
     padding-top: 30px;
+  }
+
+  .info-image {
+	width: 720px;
   }
 
   .gallery {
@@ -14,6 +31,12 @@
     // margin-top: -30px;
     margin-left: -30px;
   }
+}
+
+@media screen and (min-width: 1200px) {
+	.info-image {
+			width: 960px;
+		}
 }
 
 /* -------- FILM CARD STYLES -------- */
