@@ -1,22 +1,19 @@
-export default function cardTpl(movies) {
-  return (
-    <li class="films__item">
-      <a href="" class="films__wrapper">
-        <div class="films__img-wrapper">
-          <img class="films__img" src="" alt="" loading="lazy" />
-        </div>
-
-        <div class="img__row">
-          <p></p>
-          <p></p>
-        </div>
-
-        <div class="films__info">
-          <p class="films__name"></p>
-
-          <p class="films__description"></p>
-        </div>
-      </a>
-    </li>
-  );
-}
+import {filmsTemps} from './buttons';
+export  function cardTpl(movies) {
+  console.log(movies);
+  filmsTemps.setFilms(movies);
+  return movies.map(movi => 
+  `<li class="card">
+  <div class="films__img-wrapper">
+    <img class="card-img"   
+    src="${movi.poster_path}" alt="" loading="lazy" datafilmid="${movi.id}" />
+    <div class="film">
+      <p  class="film-title ">${movi.original_title
+      }</p>
+      <span class="film-release">${movi.genres}</span>
+      <span class="film-release">${movi.release_date}</span>
+    </div>
+  </div>
+</li>`
+).join(" ");
+  }

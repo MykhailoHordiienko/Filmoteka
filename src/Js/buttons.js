@@ -16,11 +16,38 @@ const refs = {
     adwBtn:document.querySelector('.modal-watched'),
     atqBtn:document.querySelector('.modal-queue'),
 
+
     gokBtn:document.querySelector('.gok'),
+    }
+    
+    export const filmsTemps = { 
+        filmArray:[],
+        resetFilms(){
+            this.filmArray = [];
+        },
+        setFilms(arrayA) {
+            this.resetFilms();
+            this.filmArray = arrayA;
+            console.log(this.filmArray);
+        }
     }
     
     const LOCAL_STORAGE_KEY = 'films';
     const LOCAL_STORAGE_KEY_QUEUE='queue';
+    // const watchedKey = {
+    //     `<li class="card">
+    //     <div class="films__img-wrapper">
+    //       <img class="card-img"   
+    //       src="${movi.poster_path}" alt="" loading="lazy" datafilmid="${movi.id}" />
+    //       <div class="film">
+    //         <p  class="film-title ">${movi.original_title
+    //         }</p>
+    //         <span class="film-release">${movi.genres}</span>
+    //         <span class="film-release">${movi.release_date}</span>
+    //       </div>
+    //     </div>
+    //   </li>`.
+    // }
     let deletePosition = - 1; 
     let deletePositionQ = - 1; 
     let b = 0;
@@ -91,23 +118,23 @@ const refs = {
         }
         }
 
-    refs.adwBtn.addEventListener('click', () => {
-        const teksT = refs.adwBtn.innerText;
-        console.log(teksT);
-        (teksT === 'ADD TO WATCHED') ? addFilm(films[b], LOCAL_STORAGE_KEY, refs.adwBtn,'WATCHED') : removeFilm(deletePosition, LOCAL_STORAGE_KEY, refs.adwBtn, 'WATCHED');
-    })
+    // refs.adwBtn.addEventListener('click', () => {
+    //     const teksT = refs.adwBtn.innerText;
+    //     console.log(teksT);
+    //     (teksT === 'ADD TO WATCHED') ? addFilm(films[b], LOCAL_STORAGE_KEY, refs.adwBtn,'WATCHED') : removeFilm(deletePosition, LOCAL_STORAGE_KEY, refs.adwBtn, 'WATCHED');
+    // })
         
-        function massiv(locstorkey){
-        try {
-            return JSON.parse(localStorage.getItem(locstorkey));
+    //     function massiv(locstorkey){
+    //     try {
+    //         return JSON.parse(localStorage.getItem(locstorkey));
         
-        } catch (error) {
-            console.log(error);            
-    }}
-    refs.watchedBtn.addEventListener('click', () => {
-        massiv(LOCAL_STORAGE_KEY)
-        // console.log(massiv(LOCAL_STORAGE_KEY)); 
-    })
+    //     } catch (error) {
+    //         console.log(error);            
+    // }}
+    // refs.watchedBtn.addEventListener('click', () => {
+    //     massiv(LOCAL_STORAGE_KEY)
+    //     // console.log(massiv(LOCAL_STORAGE_KEY)); 
+    // })
 
     function massiv(locstorkey){
         try {
@@ -116,25 +143,25 @@ const refs = {
         } catch (error) {
             console.log(error);            
     }}
-    refs.queueBtn.addEventListener('click', () => {
-        massiv(LOCAL_STORAGE_KEY_QUEUE)
-        // console.log(massiv(LOCAL_STORAGE_KEY_QUEUE))
-    })
+    // refs.queueBtn.addEventListener('click', () => {
+    //     massiv(LOCAL_STORAGE_KEY_QUEUE)
+    //     // console.log(massiv(LOCAL_STORAGE_KEY_QUEUE))
+    // })
 
-    refs.atqBtn.addEventListener('click', () => {
-        const teksT = refs.atqBtn.innerText;
-        console.log(teksT);
-        (teksT === 'ADD TO QUEUE') ? addFilm(films[b],LOCAL_STORAGE_KEY_QUEUE, refs.atqBtn,'QUEUE') : removeFilm(deletePositionQ, LOCAL_STORAGE_KEY_QUEUE, refs.atqBtn, 'QUEUE');
-        })
-
-
+    // refs.atqBtn.addEventListener('click', () => {
+    //     const teksT = refs.atqBtn.innerText;
+    //     console.log(teksT);
+    //     (teksT === 'ADD TO QUEUE') ? addFilm(films[b],LOCAL_STORAGE_KEY_QUEUE, refs.atqBtn,'QUEUE') : removeFilm(deletePositionQ, LOCAL_STORAGE_KEY_QUEUE, refs.atqBtn, 'QUEUE');
+    //     })
 
 
 
-    refs.gokBtn.addEventListener('click', () => {
-        // b = Math.floor(Math.random() * 7);
-        // console.log('Рандомний фільм', films[b]);
-        deletePosition = checkВutton(films[b], LOCAL_STORAGE_KEY, refs.adwBtn,'WATCHED');
-        deletePositionQ = checkВutton(films[b], LOCAL_STORAGE_KEY_QUEUE, refs.atqBtn,'QUEUE');
+
+
+    // refs.gokBtn.addEventListener('click', () => {
+    //     // b = Math.floor(Math.random() * 7);
+    //     // console.log('Рандомний фільм', films[b]);
+    //     deletePosition = checkВutton(films[b], LOCAL_STORAGE_KEY, refs.adwBtn,'WATCHED');
+    //     deletePositionQ = checkВutton(films[b], LOCAL_STORAGE_KEY_QUEUE, refs.atqBtn,'QUEUE');
         
-    })
+    // })

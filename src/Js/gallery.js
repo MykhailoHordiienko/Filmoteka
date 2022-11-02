@@ -6,6 +6,7 @@ import { startSpin, stopSpin } from './spinner';
 import { renderInfoMsg, hideInfoImg, renderEmptyGalleryMsg } from './informing';
 import { getMaxPages, resetPagination } from './pagination';
 
+
 const fetchFilms = new fetchApiFilms();
 
 const refs = {
