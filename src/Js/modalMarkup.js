@@ -1,7 +1,8 @@
 export default function modalMarkup(movie) {
   return `
-    <div class="backdrop" data-modal>
-      <div class="modal">
+  <div class="modal-container">
+    <div class="backdrop-modal" data-modal>
+      <div class="modal-movie">
         <button type="button" class="modal-close" data-modal-close>
           <img src="./images/close.svg" alt="modal-close" width="30" height="30" />
         </button>
@@ -44,5 +45,6 @@ export default function modalMarkup(movie) {
           </div>
         </div>
       </div>
-    </div>`;
+    </div>
+  </div>`;
 }

@@ -53,11 +53,7 @@ refs.inc.addEventListener('click', () => {
         return;
       }
       el.firstChild.textContent++;
-     
-
     });
-
-
   });
 });
 
@@ -140,19 +136,26 @@ refs.page_items.forEach(el => {
 
     if (el.firstChild.textContent === refs.pageMax.firstChild.textContent) {
       hiddePagElremove(refs.dotsLeft);
-      refs.btn2.firstChild.textContent = +refs.pageMax.firstChild.textContent - 3;
-      refs.middleBtn.firstChild.textContent = +refs.pageMax.firstChild.textContent - 2;
-      refs.btn4.firstChild.textContent = +refs.pageMax.firstChild.textContent - 1;
+      refs.btn2.firstChild.textContent =
+        +refs.pageMax.firstChild.textContent - 3;
+      refs.middleBtn.firstChild.textContent =
+        +refs.pageMax.firstChild.textContent - 2;
+      refs.btn4.firstChild.textContent =
+        +refs.pageMax.firstChild.textContent - 1;
       hiddePagEladd(refs.dotsRigth);
     }
 
-    if (evt.currentTarget === refs.btn2 && +refs.pageMax.firstChild.textContent - 3) {
+    if (
+      evt.currentTarget === refs.btn2 &&
+      +refs.pageMax.firstChild.textContent - 3
+    ) {
       hiddePagElremove(refs.dotsRigth);
     }
 
     if (
       evt.currentTarget === refs.btn4 &&
-      +evt.currentTarget.firstChild.textContent === +refs.pageMax.firstChild.textContent - 1
+      +evt.currentTarget.firstChild.textContent ===
+        +refs.pageMax.firstChild.textContent - 1
     ) {
       hiddePagEladd(refs.dotsRigth);
     }
@@ -188,7 +191,12 @@ function hiddePagElremove(elem) {
 }
 
 function getMaxPages() {
-  total_results().then(pages => (refs.pageMax.firstChild.textContent = pages));
+  setTimeout(() => {
+    total_results().then(
+      pages => (refs.pageMax.firstChild.textContent = pages)
+    ),
+      300;
+  });
 }
 
 function resetPagination() {

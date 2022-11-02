@@ -1,4 +1,4 @@
-const BASE_URL = 'https://api.themoviedb.org/';
+const BASE_URL = 'https://api.themoviedb.org/3/movie/';
 const API_KEY = '1f93214cb1bbadcc143eeb01d552ab8c';
 
 export default class CountriesApiService {
@@ -7,7 +7,7 @@ export default class CountriesApiService {
   }
 
   fetchMovie() {
-    const url = `${BASE_URL}${this.id}/movie/550?api_key=${API_KEY}`;
+    const url = `${BASE_URL}${this.id}?api_key=${API_KEY}`;
 
     return fetch(url)
       .then(response => {

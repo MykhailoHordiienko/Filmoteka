@@ -3,7 +3,7 @@ import modalMarkup from './modalMarkup';
 import {filmsTemps} from './buttons';
 const body = document.querySelector('body');
 const modal = document.querySelector('.backdrop');
-const gallery = document.querySelector('js-gallery');
+const gallery = document.querySelector('.js-gallery');
 
 const selectedMovie = new moviedbApiService();
 
@@ -13,40 +13,54 @@ function onClick(e) {
   if (e.target.nodeName !== 'IMG') {
     return;
   }
-  selectedMovie.query = e.target.datafilmid;
+
   
+
+  selectedMovie.query = e.target.attributes.datafilmid.value;main
   selectedMovie.fetchMovie().then(createModal);
 }
 
 function createModal(movie) {
-  console.log(movie);
-
   body.insertAdjacentHTML('beforeend', modalMarkup(movie));
+
+  const modalCloseBtn = document.querySelector('.modal-close-img');
+  const modalCloseBackdrop = document.querySelector('.backdrop-modal');
+
+  document.addEventListener('keydown', escCheck);
+  modalCloseBtn.addEventListener('click', closeBtn);
+  modalCloseBackdrop.addEventListener('click', onBackdropClick);
 }
 
 function removeModal() {
-  modal.innerHTML = '';
+  const modalCloseBtn = document.querySelector('.modal-close');
+  const modalCloseBackdrop = document.querySelector('.backdrop-modal');
+  const modalConainer = document.querySelector('.modal-container');
 
-  // пока не сделал !!!!
-  // remove EventListener
+  modalConainer.remove();
+
+  document.removeEventListener('keydown', escCheck);
+  modalCloseBtn.removeEventListener('click', closeBtn);
+  modalCloseBackdrop.removeEventListener('click', onBackdropClick);
 }
 
-// закрытие модалки пока не сделал !!!!
+function escCheck(e) {
+  if (e.code !== 'Escape') {
+    return;
+  }
+  removeModal();
+}
 
-// (() => {
-//   const refs = {
-//     openModalBtn: document.querySelector('[data-modal-open]'),
-//     closeModalBtn: document.querySelector('[data-modal-close]'),
-//     modal: document.querySelector('[data-modal]'),
-//   };
+function closeBtn(e) {
+  // console.log(e.target);
+  if (e.target.nodeName !== 'IMG') {
+    return;
+  }
 
-//   refs.openModalBtn.addEventListener('click', toggleModal);
-//   refs.closeModalBtn.addEventListener('click', toggleModal);
+  removeModal();
+}
 
-//   function toggleModal() {
-//     refs.modal.classList.toggle('is-hidden');
-//   }
-// })();
-
-// selectedMovie.query = 3;
-// selectedMovie.fetchMovie().then(createModal);
+function onBackdropClick(e) {
+  if (e.currentTarget === e.target) {
+    removeModal();
+  }
+}
