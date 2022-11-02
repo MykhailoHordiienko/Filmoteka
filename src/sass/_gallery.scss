@@ -2,17 +2,16 @@
   padding-top: 20px;
 }
 
-.info-notify 	{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	margin-bottom: 30px;
+.info-notify {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
 }
 
-
-.info-image	{
-	width: 320px;
+.info-image {
+  width: 320px;
 }
 
 @media screen and (min-width: 768px) {
@@ -21,7 +20,7 @@
   }
 
   .info-image {
-	width: 720px;
+    width: 720px;
   }
 
   .gallery {
@@ -34,19 +33,37 @@
 }
 
 @media screen and (min-width: 1200px) {
-	.info-image {
-			width: 960px;
-		}
+  .info-image {
+    width: 960px;
+  }
 }
 
 /* -------- FILM CARD STYLES -------- */
 .card {
-width: 280px;
- height: 440px;
+  max-width: 280px;
+  max-height: 443px;
+
   transition: 0.5s linear;
   margin: 0 auto;
   margin-top: 20px;
   border-radius: 5px;
+
+
+  padding-bottom: 10px;
+  &:hover,
+  &:focus {
+    transform: scale(1.05);
+    box-shadow: 4px 3px 12px -1px rgba(255, 107, 8, 0.5);
+  }
+  @include mobile {
+    width: 280px;
+    height: 443px;
+    margin-bottom: 20px;
+  }
+
+  @include tablet {
+    width: 336px;
+    height: 495px;
  box-sizing: content-box;
   padding-bottom: 10px;
 &:hover,
@@ -61,11 +78,27 @@ width: 280px;
 @include tablet {
   width: 293px;
   height: 440px;
+
     display: flex;
     flex-wrap: wrap;
     flex-basis: calc(100% / 2 - 30px);
     margin-top: 30px;
     margin-left: 30px;
+
+    height: 443px;
+    margin-bottom: 0;
+  }
+
+  @include desktop {
+    width: 395px;
+    height: 634px;
+    gap: 30px;
+  }
+}
+.card-img {
+  max-width: 280px;
+  max-height: 388px;
+
     margin-bottom:0;
 
 }
@@ -80,10 +113,16 @@ width: 280px;
 .card-img {
   width: 280px;
   height: 398px;
+
   border-radius: 5px;
   object-fit: cover;
   margin-bottom: 10px;
   cursor: pointer;
+
+  @include mobile {
+    width: 280px;
+    height: 402px;
+
 
 @include tablet {
 width: 293px;
@@ -92,28 +131,36 @@ height: 398px;
 @include desktop {
   width: 274px;
   height: 398px;
+
   }
 
+  @include tablet {
+    width: 336px;
+    height: 455px;
+  }
+  @include desktop {
+    width: 395px;
+    height: 574px;
+  }
 
-&:hover,
-&:focus {
-  border-radius: initial;
-}
+  &:hover,
+  &:focus {
+    border-radius: initial;
+  }
 }
 
 .film {
   height: 31px;
   font-family: 'Roboto';
-  @include font(500, 12px, 1.34, null,var(--accent-color));
+  @include font(500, 12px, 1.34, null, var(--accent-color));
 
-@include tablet{
-  @include font(500, 12px, 1.33, null,var(--accent-color));
-}
-@include desktop{
-  height: 48px;
-  @include font(500, 20px, 1.2, null,var(--accent-color));
-}
-
+  @include tablet {
+    @include font(500, 12px, 1.33, null, var(--accent-color));
+  }
+  @include desktop {
+    height: 48px;
+    @include font(500, 20px, 1.2, null, var(--accent-color));
+  }
 }
 
 .film-title {
@@ -123,6 +170,11 @@ height: 398px;
   color: #000;
   text-transform: uppercase;
 }
+
+.films__img-wrapper {
+  width: 100%;
+  height: 100%;
+
 .films__img-wrapper{
   width: 280px;
   height: 398px;
@@ -134,6 +186,7 @@ height: 398px;
       width: 274px;
       height: 398px;
       }
+
 }
 .desc-wraper {
   display: flex;
@@ -146,9 +199,8 @@ height: 398px;
 }
 
 .film-release {
-
-  &+&{
-    border-left:1px solid var(--accent-color);
+  & + & {
+    border-left: 1px solid var(--accent-color);
     padding-left: 2px;
   }
 }
@@ -165,5 +217,3 @@ height: 398px;
     display: none;
   }
 }
-
-
