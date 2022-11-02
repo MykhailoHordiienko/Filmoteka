@@ -1326,6 +1326,8 @@ p {
     width: 806px;
     height: 558px;
     padding: 40px 12px 40px 12px;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
   }
 }
 
@@ -1337,6 +1339,8 @@ p {
   align-items: center;
   justify-content: center;
   padding: 0;
+  width: 30px;
+  height: 30px;
   border: 0;
   color: #000000;
   background-color: #ffffff;

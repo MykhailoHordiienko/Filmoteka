@@ -4,8 +4,7 @@ export default function modalMarkup(movie) {
     <div class="backdrop-modal" data-modal>
       <div class="modal-movie">
         <button type="button" class="modal-close" data-modal-close>
-        <svg width="30" height="30" class="modal-close-svg">
-            <use href="./images/close.svg"></use></svg>
+        <img src="./images/close.svg" alt="modal-close" width="30" height="30" class="modal-close-img" />
         </button>
         <div class="modal-poster">
           <img
