@@ -3,7 +3,7 @@ import modalMarkup from './modalMarkup';
 
 const body = document.querySelector('body');
 const modal = document.querySelector('.backdrop');
-const gallery = document.querySelector('js-gallery');
+const gallery = document.querySelector('.js-gallery');
 
 const selectedMovie = new moviedbApiService();
 
@@ -13,39 +13,36 @@ function onClick(e) {
   if (e.target.nodeName !== 'IMG') {
     return;
   }
-  selectedMovie.query = e.target.datafilmid;
+  selectedMovie.query = e.target.attributes.datafilmid.value;
   selectedMovie.fetchMovie().then(createModal);
 }
 
 function createModal(movie) {
-  console.log(movie);
-
   body.insertAdjacentHTML('beforeend', modalMarkup(movie));
+
+  const modalCloseBtn = document.querySelector('.modal-close');
+  const modalCloseBackdrop = document.querySelector('.backdrop-modal');
+
+  document.addEventListener('keydown', escCheck);
+  modalCloseBackdrop.addEventListener('click', removeModal);
+  modalCloseBtn.addEventListener('click', removeModal);
 }
 
 function removeModal() {
-  modal.innerHTML = '';
+  const modalCloseBtn = document.querySelector('.modal-close');
+  const modalCloseBackdrop = document.querySelector('.backdrop-modal');
+  const modalConainer = document.querySelector('.modal-container');
 
-  // пока не сделал !!!!
-  // remove EventListener
+  modalConainer.remove();
+
+  modalCloseBtn.removeEventListener('click', removeModal);
+  modalCloseBackdrop.removeEventListener('click', removeModal);
+  document.removeEventListener('keydown', escCheck);
 }
 
-// закрытие модалки пока не сделал !!!!
-
-// (() => {
-//   const refs = {
-//     openModalBtn: document.querySelector('[data-modal-open]'),
-//     closeModalBtn: document.querySelector('[data-modal-close]'),
-//     modal: document.querySelector('[data-modal]'),
-//   };
-
-//   refs.openModalBtn.addEventListener('click', toggleModal);
-//   refs.closeModalBtn.addEventListener('click', toggleModal);
-
-//   function toggleModal() {
-//     refs.modal.classList.toggle('is-hidden');
-//   }
-// })();
-
-// selectedMovie.query = 3;
-// selectedMovie.fetchMovie().then(createModal);
+function escCheck(e) {
+  if (e.code !== 'Escape') {
+    return;
+  }
+  removeModal();
+}
