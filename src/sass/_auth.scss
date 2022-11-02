@@ -152,14 +152,30 @@ border-radius: 10px;
 transition: background-color var(--time-duration) var(--time-function),
 border-color var(--time-duration) var(--time-function);
 cursor: pointer;
+&+&{
+  margin-left: 0px;
+}
 &:hover,&:focus{
   border-color: #FF6B02;
   background-color: #FF6B02;
 }
 }
-.container{
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
 
-  width: 1200px
+@include mobile {
+  width: 480px;
+}
+@include tablet {
+  width: 768px;
+}
+
+@include desktop {
+  width: 1200px;
+}
 }
 ul,
 ol {
