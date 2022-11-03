@@ -26,7 +26,6 @@
   .gallery {
     display: flex;
     flex-wrap: wrap;
-  
 
     // margin-top: -30px;
     //margin-left: -30px;
@@ -43,13 +42,11 @@
 .card {
   max-width: 280px;
   max-height: 443px;
-
+  gap: 30px;
   transition: 0.5s linear;
-  margin: 0 auto;
-  margin-top: 20px;
+  margin: 20px auto;
+
   border-radius: 5px;
-
-
   padding-bottom: 10px;
   &:hover,
   &:focus {
@@ -59,57 +56,45 @@
   @include mobile {
     width: 280px;
     height: 443px;
-    margin-bottom: 20px;
   }
 
   @include tablet {
     width: 336px;
     height: 495px;
- box-sizing: content-box;
-  padding-bottom: 10px;
-&:hover,
-&:focus {
-  transform: scale(1.05);
-  box-shadow: 4px 3px 12px -1px rgba(255, 107, 8, 0.5);
-}
-@include mobile {
-    
+    box-sizing: content-box;
+
+    &:hover,
+    &:focus {
+      transform: scale(1.05);
+      box-shadow: 4px 3px 12px -1px rgba(255, 107, 8, 0.5);
+    }
+
+    @include tablet {
+      width: 293px;
+      height: 440px;
+      display: flex;
+      flex-wrap: wrap;
+      height: 443px;
+    }
+
+    @include desktop {
+      width: 395px;
+      height: 634px;
+    }
   }
+  .card-img {
+    max-width: 280px;
+    max-height: 388px;
 
-@include tablet {
-  width: 293px;
-  height: 440px;
-
-    display: flex;
-    flex-wrap: wrap;
-    flex-basis: calc(100% / 2 - 30px);
-    margin-top: 30px;
-    margin-left: 30px;
-
-    height: 443px;
     margin-bottom: 0;
   }
 
   @include desktop {
-    width: 395px;
-    height: 634px;
-    gap: 30px;
+    width: 274px;
+    height: 440px;
+    // margin-right: 0;
+    // flex-basis: calc(100% / 3 - 30px);
   }
-}
-.card-img {
-  max-width: 280px;
-  max-height: 388px;
-
-    margin-bottom:0;
-
-}
-
-@include desktop  {
-  width: 274px;
-  height: 440px;
-  // margin-right: 0;
-    flex-basis: calc(100% / 3 - 30px);
-}
 }
 .card-img {
   width: 280px;
@@ -125,14 +110,13 @@
     height: 402px;
   }
 
-@include tablet {
-width: 293px;
-height: 398px;
-}
-@include desktop {
-  width: 274px;
-  height: 398px;
-
+  @include tablet {
+    width: 293px;
+    height: 398px;
+  }
+  @include desktop {
+    width: 274px;
+    height: 398px;
   }
 
   @include tablet {
@@ -175,20 +159,18 @@ height: 398px;
 .films__img-wrapper {
   width: 100%;
   height: 100%;
-  
 }
-.films__img-wrapper{
+.films__img-wrapper {
   width: 280px;
   height: 398px;
   @include tablet {
     width: 293px;
     height: 398px;
-    }
-    @include desktop {
-      width: 274px;
-      height: 398px;
-      }
-
+  }
+  @include desktop {
+    width: 274px;
+    height: 398px;
+  }
 }
 .desc-wraper {
   display: flex;
