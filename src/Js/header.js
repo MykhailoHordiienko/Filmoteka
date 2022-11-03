@@ -1,6 +1,6 @@
 import { filmsTemps } from './buttons';
 
-refsHed={
+const refsHed={
     home:document.querySelector('#home'),
     searchBox:document.querySelector('#search'),
     buttonBox:document.querySelector('#buttons-box'),
