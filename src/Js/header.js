@@ -1,3 +1,5 @@
+import { filmsTemps } from './buttons';
+
 refsHed={
     home:document.querySelector('#home'),
     searchBox:document.querySelector('#search'),
@@ -26,3 +28,5 @@ function openlibrary(event){
     refsHed.searchBox.classList.add('is-hidden');
     refsHed.buttonBox.classList.remove('is-hidden');
 }
+
+filmsTemps.initL()
