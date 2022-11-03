@@ -1,60 +1,50 @@
 ## Проект сайта "Filmoteka"
 
-_Привет!_ :wave:
+_Hi!_ :wave:
 
-Мы студенты группы под названием **"Код Шрёдингера"** академии GOIT. :rocket:
+We are students of a group called **"DeVTeaM"** Academies GOIT. :rocket:
 
-После окончания курса **JavaScript** , нам нужно было **закрепить** :pushpin:
-полученные знания и **реализовать** :page_with_curl: выпускной проект в течение
-полторы недели.
+After the end of the course **JavaScript** , we needed to **build on** :pushpin:
+the knowledge and **implement** :page_with_curl: senior project in week and a
+half.
 
-:art: Дизайнерами для нас был разработан **макет командного проекта** - 3 версии
-сайта **“Filmoteka”**: мобильная, планшетная и десктопная.
+:art: The designers for us have designed **team project layout** -
+**“Filmoteka”**.
 
-:hammer_and_wrench: Также нам было предоставлено ТЗ с описанием фунционала
-будущего сайта.
+:hammer_and_wrench: We were also given a ToR with a description of the
+functionality future site.
 
-:man_student: Над проектом трудились **9 человек**. Каждый из них работал над
-**конкретными задачами**, которые распределял и контролировал тимлид:
+:man_student: The project was worked on by **8 people**. Each of them has been
+working on **specific tasks**.
 
-- [**Team Lead:** Dmitriy Shukaliuk](https://github.com/mityaua)
+- [**Team Lead:** Mykhailo Hordiienko](https://github.com/MykhailoHordiienko)
 
-- [**Scrum master** & **Front-end developer**: Anna Olenchuk](https://github.com/AnnaOlenchuk)
+- [**Scrum master** & **Front-end developer**: Valeriia Diachenko](https://github.com/ValeriiaDiachenko)
 
-- [**Scrum master assistant** & **Front-end developer**: Vita Khutorianska](https://github.com/vita-khutorianska)
+- [**Front-end developer**: Alex Vainahii](https://github.com/AlexVainahii)
 
-- [**Front-end developer**: Ivan Kuchvara](https://github.com/Kuchvara)
+- [**Front-end developer**: Valerii Mikhailenko](https://github.com/valerii-mykh)
 
-- [**Front-end developer**: Ragimov Alik](https://github.com/ragimovalik)
+- [**Front-end developerr**: Alexey Kushnir](https://github.com/Alexey-Kushnir)
 
-- [**Front-end developerr**: Александр Стариченко](https://github.com/Glasgalas)
+- [**Front-end developer**: Yuriy Zagorsky](https://github.com/Yura-111)
 
-- [**Front-end developer**: Marina Kryuchko](https://github.com/MarinaKryuchko88)
+- [**Front-end developer**: Maksym Kravchenko](https://github.com/Makmar1983)
 
-- [**Front-end developer**: Sergey Glazyrin](https://github.com/sgcruiser)
+- [**Front-end developer**: Volodymyr Trofymenko](https://github.com/VTrofymenko)
 
-- [**Front-end developer**: Taras Vlas](https://github.com/taras-vlas)
+:computer: **Our goal** was to make a site that matches the layout, and and also
+performs all the tasks of the TOR. The main purpose of the site is to searching
+for a particular movie, as well as user library organization to manage your
+movie listings.
 
-:computer: **Нашей целью** было сделать сайт, который соответствует макету, а
-также выполняет все поставленные задачи из ТЗ. Основное предназначение сайта -
-отображение популярных фильмов за неделю, поиск определённого фильма, а также
-организация библиотеки пользователя для управления списками фильмов.
+:white_check_mark: **Throughout the project, we**:
 
-:white_check_mark: **В течение всего проекта мы**:
+- practiced Git teamwork skills;
+- continued to work with the Parcel builder;
+- used the Scrum methodology;
+- consolidated knowledge of HTML and CSS.
+- consolidated the knowledge gained during the course in JavaScript.
 
-- практиковали навыки командной работы с Git;
-- продолжали работать со сборщиком Webpack;
-- использовали методологию Scrum;
-- закрепляли знания по HTML и CSS.
-- закрепляли полученные за курс знания по JavaScript.
-
-В результате слаженной командной работы :handshake: получился наш проект: ⬇
-[_Welcome!_](https://mityaua.github.io/filmoteka) ⬇
-
-<a href="https://mityaua.github.io/filmoteka/"><img src="https://i.ibb.co/543th4v/Screenshot-2021-06-07-152531.png" alt="Filmoteka" border="0"></a>
-
-P.S. На сайте, в поисковой строке нами была спрятана пасхалка, обнаружить
-которую можно лишь используя правильный запрос. Если получится - обязательно
-свяжись с нами!
-
-Подсказка: имя твоей альма-матери станет для тебя отмычкой.
+As a result of coordinated teamwork :handshake: we got our project: ⬇
+[_Welcome!_](https://mykhailohordiienko.github.io/Filmoteka/) ⬇
