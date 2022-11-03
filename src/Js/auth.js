@@ -105,7 +105,7 @@ function signOutSystems() {
     });
 }
 function signGoogleSystems(event) {
-  event.preventDefault;
+  event.preventDefault();
 
   signInWithPopup(auth, provider)
     .then(result => {
@@ -117,7 +117,7 @@ function signGoogleSystems(event) {
     });
 }
 function signFaceSystems(event) {
-  event.preventDefault;
+  event.preventDefault();
   signInWithPopup(auth, provider1)
     .then(result => {
       const user = result.user;

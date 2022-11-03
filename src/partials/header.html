@@ -8,20 +8,20 @@
         <span class="header-logo-name">Filmoteka</span>
       </a>
     </div>
-    <include src="./partials/auth.html"></include>
+    <include src="./partials/auth.html"></include> 
     <nav class="header-nav">
       <ul class="header-nav-list">
         <li class="header-nav-item">
-          <a href="" class="header-nav-link current">HOME</a>
+          <a id="homeL" href="#home" class="header-nav-link current">HOME</a>
         </li>
         <li class="header-nav-item">
-          <a href="./library.html" class="header-nav-link second">MY LIBRARY</a>
+          <a id="libraryL" href="#home" class="header-nav-link second">MY LIBRARY</a>
         </li>
       </ul>
     </nav>
   </div>
 
-  <form class="input-container header__form">
+  <form id="search" class="input-container header__form ">
     <input type="text" id="search-box" class="search-box-input header__form-input" placeholder="Movie search"
       autocomplete="off" />
     <button type="submit" class="input-search-button">
@@ -30,6 +30,10 @@
       </svg>
     </button>
   </form>
+  <div id="buttons-box" class="buttons-container is-hidden">
+    <button class="header-button watched-btn">WATCHED</button>
+    <button class="header-button queue-btn">QUEUE</button>
+  </div>
 
   <div class="header__error js-header__error ">
     <p class="header__error-text is-hidden">

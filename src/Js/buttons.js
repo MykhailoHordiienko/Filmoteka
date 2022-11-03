@@ -151,7 +151,6 @@
             init(){
                 try{
                     this.saveFilm = localStorage.getItem(this.LOCAL_STORAGE_KEY);
-                   console.log(this.saveFilm);
                     if (!this.saveFilm) {
                         localStorage.setItem (this.LOCAL_STORAGE_KEY, JSON.stringify([])); 
                     };
