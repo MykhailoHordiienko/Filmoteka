@@ -182,9 +182,6 @@ massivout(locstorkey) {
         },
 }
 
-
-
-
 // let b = 0;
 
 
