@@ -14,11 +14,17 @@
         right: calc(((100vw - 320px) / 2));
         }
     }
+        @media screen and (min-width: 425px) {
+            .up-btn-wrapper {
+                bottom: 39px;
+                right: calc(((100vw - 425px) / 2));
+            }
+        }
 
-    @media screen and (min-width: 780px) {
+    @media screen and (min-width: 768px) {
         .up-btn-wrapper{
         bottom: 39px;
-        right: calc(((100vw - 780px) / 2));
+        right: calc(((100vw - 768px) / 2));
         }
     }
 
@@ -52,9 +58,19 @@
         }
     }
 
-    .up-btn__icon:hover,
-    .up-btn__icon:focus {
-        fill: #FF6B08;
+    .up-btn-wrapper:hover,
+    .up-btn-wrapper:focus {
+        ::before{
+            display: block;
+            content: "";
+                margin: 30px auto;
+                width: 25px;
+                height: 25px;
+                border-top: 2px solid #000;
+                border-left: 2px solid #000;
+                transform: rotate(90deg);
+                position: absolute;
+        }
     }
 
 .visuallyhidden {
