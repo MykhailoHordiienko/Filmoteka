@@ -121,11 +121,28 @@ function removeHiddenfromCardEl() {
   refs.pagination.classList.add('is-hidden'); //для скриття пагинації розкоментувати
 }
 
+// ----- home рендер по локалу
+function createlibraryGallery(movies) {
+  hideInfoImg();
+  startSpin();
+
+      if (movies.length === 0) {
+        renderInfoMsg();
+        renderEmptyGalleryMsg('Film not found');
+        removeHiddenfromCardEl();
+      } else {
+        makeGalleryMarkup(movies);
+      }
+   stopSpin()
+}
+
 export {
   fetchFilms,
   clearGalleryMarkup,
   createPopularMoviesGallery,
   renderLibraryGallery,
   createSearchMoviesGallery,
+  createlibraryGallery,
+  refs,
 };
 
