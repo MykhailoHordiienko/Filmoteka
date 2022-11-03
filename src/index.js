@@ -1,7 +1,7 @@
 import './Js/header';
 
 import './Js/modal-team-info';
-//import './Js/upBtn';
+import './Js/upBtn';
 import './Js/pagination';
 // import './Js/button';
 // import './Js/pagination';
