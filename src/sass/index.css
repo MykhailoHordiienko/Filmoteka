@@ -1646,6 +1646,7 @@ p {
 }
 
 .modal-description {
+  overflow-y: scroll;
   margin-top: 8px;
   font-style: normal;
   font-weight: 500;
