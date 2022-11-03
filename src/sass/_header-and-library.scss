@@ -8,11 +8,26 @@
 	height: 216px;
 	width: 100%;
 	padding-top: 45px;
+
+	@media (min-device-pixel-ratio: 2) {
+    background-image: url("../images/header1-2x.png");
+	}
 }
 
 .my-library {
+    background-image: url("../images/header2-mob.png");
+
+    @media screen and (min-width: 768px) {
+		background-image: url("../images/header2-tab.png");
+	}
+
+	@media screen and (min-width: 1200px) {
 	background-image: url("../images/header2.jpg");
-}
+	}
+	@media (min-device-pixel-ratio: 2) {
+		background-image: url("../images/header2-2x.png");
+		}
+	}
 
 .header-container {
 	display: -webkit-box;
