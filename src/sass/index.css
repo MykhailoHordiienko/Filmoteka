@@ -727,6 +727,7 @@ p {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.2);
+  z-index: 5;
 }
 
 .footer-backdrop.is-hidden__footer {
@@ -751,7 +752,7 @@ p {
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
-  transition: opacity 250ms var(--transition-timing-function);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 999;
 }
 
@@ -793,18 +794,142 @@ p {
   fill: #FF6B08;
 }
 
-/* .modal__text {
-    display: block;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 12px;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 23px;
-    text-align: center;
-    letter-spacing: 0.03em;
-    color: ;
-} */
+.team-name {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 13px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: #545454;
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+.team__photo {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .team__photo {
+    margin-bottom: 29px;
+    width: 55px;
+    height: 55px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .team__photo {
+    margin-bottom: 19px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .team__photo {
+    margin-bottom: 15px;
+  }
+}
+
+.team-link {
+  border-color: transparent;
+  border: 1px;
+  text-decoration: none;
+}
+
+.team-link:hover,
+.team-link:focus {
+  border-color: #FF6B08;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team {
+  display: flex;
+  flex-wrap: wrap;
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .team {
+    flex-basis: calc((100% - 60px) / 2);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .team {
+    flex-basis: calc((100% - 90px) / 4);
+  }
+}
+
+.up-btn-wrapper {
+  position: fixed;
+  bottom: 39px;
+  right: 10px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 320px) {
+  .up-btn-wrapper {
+    bottom: 39px;
+    right: calc((100vw - 320px) / 2);
+  }
+}
+@media screen and (min-width: 780px) {
+  .up-btn-wrapper {
+    bottom: 39px;
+    right: calc((100vw - 780px) / 2);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .up-btn-wrapper {
+    bottom: 55px;
+    right: calc((100vw - 1200px) / 2);
+  }
+}
+.up-btn__icon {
+  width: 40px;
+  height: 40px;
+  transition-property: fill;
+  fill: #545454;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media screen and (min-width: 780px) {
+  .up-btn__icon {
+    width: 50px;
+    height: 50px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .up-btn__icon {
+    width: 60px;
+    height: 60px;
+  }
+}
+.up-btn__icon:hover,
+.up-btn__icon:focus {
+  fill: #FF6B08;
+}
+
+.visuallyhidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
 .container > .gallery {
   padding-top: 20px;
 }
@@ -831,7 +956,6 @@ p {
   .gallery {
     display: flex;
     flex-wrap: wrap;
-    margin-left: -30px;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -864,6 +988,18 @@ p {
   .card {
     width: 336px;
     height: 495px;
+    box-sizing: content-box;
+    padding-bottom: 10px;
+  }
+  .card:hover, .card:focus {
+    transform: scale(1.05);
+    box-shadow: 4px 3px 12px -1px rgba(255, 107, 8, 0.5);
+  }
+}
+@media screen and (min-width: 768px) and (min-width: 768px) {
+  .card {
+    width: 293px;
+    height: 440px;
     display: flex;
     flex-wrap: wrap;
     flex-basis: calc(50% - 30px);
@@ -873,17 +1009,29 @@ p {
     margin-bottom: 0;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 768px) and (min-width: 1200px) {
   .card {
     width: 395px;
     height: 634px;
+    gap: 30px;
+  }
+}
+.card .card-img {
+  max-width: 280px;
+  max-height: 388px;
+  margin-bottom: 0;
+}
+@media screen and (min-width: 1200px) {
+  .card {
+    width: 274px;
+    height: 440px;
     flex-basis: calc(33.3333333333% - 30px);
   }
 }
 
 .card-img {
-  max-width: 280px;
-  max-height: 402px;
+  width: 280px;
+  height: 398px;
   border-radius: 5px;
   object-fit: cover;
   margin-bottom: 10px;
@@ -893,6 +1041,18 @@ p {
   .card-img {
     width: 280px;
     height: 402px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .card-img {
+    width: 293px;
+    height: 398px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .card-img {
+    width: 274px;
+    height: 398px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -948,6 +1108,23 @@ p {
 .films__img-wrapper {
   width: 100%;
   height: 100%;
+}
+
+.films__img-wrapper {
+  width: 280px;
+  height: 398px;
+}
+@media screen and (min-width: 768px) {
+  .films__img-wrapper {
+    width: 293px;
+    height: 398px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .films__img-wrapper {
+    width: 274px;
+    height: 398px;
+  }
 }
 
 .desc-wraper {
@@ -1094,12 +1271,10 @@ p {
   background-color: inherit;
   border: none;
   border-bottom: 1px solid #fff;
-  color: var(--main-color);
   padding: 4px 0;
 }
 
 .header__form-input::placeholder {
-  color: var(--main-color);
   font-family: "Roboto", sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -1114,7 +1289,7 @@ p {
 }
 
 .header__error-text {
-  color: var(--error-color);
+  color: rgb(255, 0, 27);
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -1279,6 +1454,10 @@ p {
     opacity: 0.1;
   }
 }
+.body-no-scroll {
+  overflow: hidden;
+}
+
 .backdrop-modal {
   position: fixed;
   z-index: 99;
@@ -1286,7 +1465,6 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  overflow: scroll;
   background-color: rgba(0, 0, 0, 0.2);
   transition: opacity 300ms cubic-bezier(0.4, 0, 0.2, 1), visibility 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -1468,6 +1646,7 @@ p {
 }
 
 .modal-description {
+  overflow-y: scroll;
   margin-top: 8px;
   font-style: normal;
   font-weight: 500;
