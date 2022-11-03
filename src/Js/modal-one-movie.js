@@ -16,14 +16,15 @@ function onClick(e) {
 
   
 
-  selectedMovie.query = e.target.attributes.datafilmid.value;main
+  selectedMovie.query = e.target.attributes.datafilmid.value;
+  filmsTemps.setFilmId(selectedMovie.query)
   selectedMovie.fetchMovie().then(createModal);
 }
 
 function createModal(movie) {
   body.insertAdjacentHTML('beforeend', modalMarkup(movie));
-
-  const modalCloseBtn = document.querySelector('.modal-close-img');
+filmsTemps.statusBtn();
+  const modalCloseBtn = document.querySelector('.modal-close');
   const modalCloseBackdrop = document.querySelector('.backdrop-modal');
 
   document.addEventListener('keydown', escCheck);
@@ -35,6 +36,7 @@ function removeModal() {
   const modalCloseBtn = document.querySelector('.modal-close');
   const modalCloseBackdrop = document.querySelector('.backdrop-modal');
   const modalConainer = document.querySelector('.modal-container');
+  filmsTemps.removlisten();
 
   modalConainer.remove();
 
