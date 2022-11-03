@@ -1,4 +1,4 @@
-## Проект сайта "Filmoteka"
+## "Filmoteka"
 
 _Hi!_ :wave:
 
