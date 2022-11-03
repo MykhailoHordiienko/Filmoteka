@@ -1,6 +1,13 @@
 import { filmsTemps } from './buttons';
 
-const refsHed={
+import {
+   
+    createPopularMoviesGallery,
+
+    
+  } from './gallery';
+
+export const refsHed={
     home:document.querySelector('#home'),
     searchBox:document.querySelector('#search'),
     buttonBox:document.querySelector('#buttons-box'),
@@ -19,6 +26,8 @@ function openHome(event){
        refsHed.homeL.classList.add('current');
        refsHed.searchBox.classList.remove('is-hidden');
        refsHed.buttonBox.classList.add('is-hidden');
+       filmsTemps.changeOnLibrary()
+       createPopularMoviesGallery();
 }
 function openlibrary(event){
     event.preventDefault();
@@ -27,6 +36,8 @@ function openlibrary(event){
     refsHed.homeL.classList.remove('current');
     refsHed.searchBox.classList.add('is-hidden');
     refsHed.buttonBox.classList.remove('is-hidden');
+    filmsTemps.changeOnLibrary()
+    filmsTemps.watchedBtn.click()
 }
 
 filmsTemps.initL()
