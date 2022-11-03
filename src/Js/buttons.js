@@ -167,7 +167,7 @@
                         inQueue(){createlibraryGallery(this.massivout(this.LOCAL_STORAGE_KEY_QUEUE))},
 
             initL(){
-                this.inWatched();
+
                 this.watchedBtn.addEventListener('click', this.inWatched.bind(this)); 
                 this.queueBtn.addEventListener('click', this.inQueue.bind(this));
 
