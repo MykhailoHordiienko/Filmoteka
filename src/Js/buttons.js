@@ -155,7 +155,6 @@
                         localStorage.setItem (this.LOCAL_STORAGE_KEY, JSON.stringify([])); 
                     };
                     this.saveFilm1 = localStorage.getItem(this.LOCAL_STORAGE_KEY_QUEUE);
-                    console.log(this.saveFilm1);
                     if (!this.saveFilm1) { 
                         localStorage.setItem (this.LOCAL_STORAGE_KEY_QUEUE, JSON.stringify([])); 
                     };

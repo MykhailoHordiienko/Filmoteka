@@ -1,6 +1,5 @@
 import {filmsTemps} from './buttons';
 export  function cardTpl(movies) {
-  console.log(movies);
   filmsTemps.setFilms(movies);
   return movies.map(movi => 
   `<li class="card">

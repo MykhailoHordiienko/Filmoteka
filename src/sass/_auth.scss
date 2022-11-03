@@ -146,6 +146,9 @@ border-color: var(--background-color);
   justify-content: space-around;
 }
  .sign {
+  position: absolute;
+  left:50%;
+  transform: translateX(-50%);
   margin: 30px auto;
   padding: 10px;
 color: #FFFFFF;
@@ -155,6 +158,9 @@ border-radius: 10px;
 transition: background-color var(--time-duration) var(--time-function),
 border-color var(--time-duration) var(--time-function);
 cursor: pointer;
+&--out{
+  transform: translateX(60); 
+}
 &+&{
   margin-left: 0px;
 }
@@ -163,6 +169,7 @@ cursor: pointer;
   background-color: #FF6B02;
 }
 }
+
 .container {
   width: 100%;
   margin: 0 auto;
