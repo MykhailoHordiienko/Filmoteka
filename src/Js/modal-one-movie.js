@@ -1,7 +1,7 @@
 import moviedbApiService from './moviedb-api-service';
 import modalMarkup from './modalMarkup';
 import { filmsTemps } from './buttons';
-
+import { startSpin, stopSpin } from './spinner';
 const body = document.querySelector('body');
 const gallery = document.querySelector('.js-gallery');
 const selectedMovie = new moviedbApiService();
@@ -33,6 +33,7 @@ function createModal(movie) {
 }
 
 function removeModal() {
+
   const modalCloseBtn = document.querySelector('.modal-close');
   const modalCloseBackdrop = document.querySelector('.backdrop-modal');
   const modalConainer = document.querySelector('.modal-container');
@@ -44,6 +45,7 @@ function removeModal() {
   document.removeEventListener('keydown', escCheck);
   modalCloseBtn.removeEventListener('click', closeBtn);
   modalCloseBackdrop.removeEventListener('click', onBackdropClick);
+
 }
 
 function escCheck(e) {
