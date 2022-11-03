@@ -1,10 +1,9 @@
 import moviedbApiService from './moviedb-api-service';
 import modalMarkup from './modalMarkup';
-import {filmsTemps} from './buttons';
-const body = document.querySelector('body');
-const modal = document.querySelector('.backdrop');
-const gallery = document.querySelector('.js-gallery');
+import { filmsTemps } from './buttons';
 
+const body = document.querySelector('body');
+const gallery = document.querySelector('.js-gallery');
 const selectedMovie = new moviedbApiService();
 
 gallery.addEventListener('click', onClick);
@@ -14,16 +13,17 @@ function onClick(e) {
     return;
   }
 
-  
-
   selectedMovie.query = e.target.attributes.datafilmid.value;
-  filmsTemps.setFilmId(selectedMovie.query)
+  filmsTemps.setFilmId(selectedMovie.query);
   selectedMovie.fetchMovie().then(createModal);
 }
 
 function createModal(movie) {
   body.insertAdjacentHTML('beforeend', modalMarkup(movie));
-filmsTemps.statusBtn();
+  body.classList.add('body-no-scroll');
+
+  filmsTemps.statusBtn();
+
   const modalCloseBtn = document.querySelector('.modal-close');
   const modalCloseBackdrop = document.querySelector('.backdrop-modal');
 
@@ -36,8 +36,9 @@ function removeModal() {
   const modalCloseBtn = document.querySelector('.modal-close');
   const modalCloseBackdrop = document.querySelector('.backdrop-modal');
   const modalConainer = document.querySelector('.modal-container');
-  filmsTemps.removlisten();
 
+  body.classList.remove('body-no-scroll');
+  filmsTemps.removlisten();
   modalConainer.remove();
 
   document.removeEventListener('keydown', escCheck);
@@ -53,11 +54,9 @@ function escCheck(e) {
 }
 
 function closeBtn(e) {
-  // console.log(e.target);
-  if (e.target.nodeName !== 'IMG') {
+  if (e.target.nodeName !== 'SPAN') {
     return;
   }
-
   removeModal();
 }
 

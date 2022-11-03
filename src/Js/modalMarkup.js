@@ -1,10 +1,10 @@
 export default function modalMarkup(movie) {
   return `
   <div class="modal-container">
-    <div class="backdrop-modal" data-modal>
+    <div class="backdrop-modal" >
       <div class="modal-movie">
-        <button type="button" class="modal-close" data-modal-close>
-          <img src="./images/close.svg" alt="modal-close" width="30" height="30" />
+        <button type="button" class="modal-close" >
+          <span class="material-symbols-outlined">close</span>
         </button>
         <div class="modal-poster">
           <img
@@ -14,19 +14,21 @@ export default function modalMarkup(movie) {
           />
         </div>
         <div class="modal-descr">
-          <p class="modal-title">${movie.title}</p>
+          <p class="modal-title">${movie.title.toUpperCase()}</p>
           <table class="modal-info">
             <tr>
               <td class="modal-info__param">Vote / Votes</td>
               <td class="modal-info__data">
-                <span class="modal-info__data-vote">${movie.vote_average}</span>
+                <span class="modal-info__data-vote">${movie.vote_average.toFixed(
+                  1
+                )}</span>
                 /
                 <span class="modal-info__data-votes">${movie.vote_count}</span>
               </td>
             </tr>
             <tr>
               <td class="modal-info__param">Popularity</td>
-              <td class="modal-info__data">${movie.popularity}</td>
+              <td class="modal-info__data">${movie.popularity.toFixed(1)}</td>
             </tr>
             <tr>
               <td class="modal-info__param">Original Title</td>
