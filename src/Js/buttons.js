@@ -151,12 +151,10 @@
             init(){
                 try{
                     this.saveFilm = localStorage.getItem(this.LOCAL_STORAGE_KEY);
-                   console.log(this.saveFilm);
                     if (!this.saveFilm) {
                         localStorage.setItem (this.LOCAL_STORAGE_KEY, JSON.stringify([])); 
                     };
                     this.saveFilm1 = localStorage.getItem(this.LOCAL_STORAGE_KEY_QUEUE);
-                    console.log(this.saveFilm1);
                     if (!this.saveFilm1) { 
                         localStorage.setItem (this.LOCAL_STORAGE_KEY_QUEUE, JSON.stringify([])); 
                     };
@@ -165,10 +163,11 @@
                     }
             },
 
-                        inWatched(){createlibraryGallery(massiv(LOCAL_STORAGE_KEY))},
-                        inQueue(){createlibraryGallery(this.QUEUE=massiv(LOCAL_STORAGE_KEY_QUEUE))},
+                        inWatched(){createlibraryGallery(this.massivout(this.LOCAL_STORAGE_KEY))},
+                        inQueue(){createlibraryGallery(this.massivout(this.LOCAL_STORAGE_KEY_QUEUE))},
 
             initL(){
+                this.inWatched();
                 this.watchedBtn.addEventListener('click', this.inWatched.bind(this)); 
                 this.queueBtn.addEventListener('click', this.inQueue.bind(this));
 

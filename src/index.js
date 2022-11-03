@@ -1,3 +1,5 @@
+import './Js/header';
+
 import './Js/modal-team-info';
 //import './Js/upBtn';
 import './Js/pagination';
