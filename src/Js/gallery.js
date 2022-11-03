@@ -125,7 +125,8 @@ function removeHiddenfromCardEl() {
 function createlibraryGallery(movies) {
   hideInfoImg();
   startSpin();
-
+  clearGalleryMarkup();
+  getMaxPages();
       if (movies.length === 0) {
         renderInfoMsg();
         renderEmptyGalleryMsg('Film not found');
