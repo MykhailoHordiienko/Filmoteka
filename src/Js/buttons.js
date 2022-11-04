@@ -86,7 +86,6 @@ export const filmsTemps = {
   },
 
   refresh() {
-    console.log(this.onLocMas);
     if (this.onLocMas === 'QUEUE') {
       this.queueBtn.click();
       return;
@@ -113,7 +112,6 @@ export const filmsTemps = {
       this.arrayF = JSON.parse(localStorage.getItem(locstorkey));
       this.arrayF.push(object);
       localStorage.setItem(locstorkey, JSON.stringify(this.arrayF));
-      console.log('фільм додано');
       refsBtn.innerText = 'REMOVE FROM ' + tekst;
       if (this.onLibrary) {
         this.refresh();
@@ -129,9 +127,7 @@ export const filmsTemps = {
       this.arrayF = JSON.parse(localStorage.getItem(locstorkey));
       this.arrayF.splice(deleteP, 1);
       localStorage.setItem(locstorkey, JSON.stringify(this.arrayF));
-      console.log('фільм видалено');
       refsBtn.innerText = 'ADD TO ' + tekst;
-      console.log(this.onLibrary);
       if (this.onLibrary) {
         this.refresh();
       }
