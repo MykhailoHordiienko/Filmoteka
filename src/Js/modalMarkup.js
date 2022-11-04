@@ -1,7 +1,5 @@
 export default function modalMarkup(movie) {
   return `
-  <div class="modal-container">
-    <div class="backdrop-modal">
       <div class="modal-movie">
         <button type="button" class="modal-close" >
           <span class="material-symbols-outlined">close</span>
@@ -46,7 +44,5 @@ export default function modalMarkup(movie) {
             <button class="btn modal-queue">ADD TO QUEUE</button>
           </div>
         </div>
-      </div>
-    </div>
-  </div>`;
+      </div>`;
 }

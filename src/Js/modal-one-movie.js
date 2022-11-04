@@ -4,6 +4,8 @@ import { filmsTemps } from './buttons';
 import { startSpin, stopSpin } from './spinner';
 const body = document.querySelector('body');
 const gallery = document.querySelector('.js-gallery');
+const backdropModal = document.querySelector('.backdrop-modal');
+
 const selectedMovie = new moviedbApiService();
 
 gallery.addEventListener('click', onClick);
@@ -19,34 +21,37 @@ function onClick(e) {
 }
 
 function createModal(movie) {
-  body.insertAdjacentHTML('beforeend', modalMarkup(movie));
-  body.classList.add('body-no-scroll');
-
+  backdropModal.insertAdjacentHTML('beforeend', modalMarkup(movie));
   const modalCloseBtn = document.querySelector('.modal-close');
-  const modalCloseBackdrop = document.querySelector('.backdrop-modal');
+
+  body.classList.add('body-no-scroll');
+  backdropModal.classList.remove('is-hidden');
 
   filmsTemps.statusBtn();
 
   document.addEventListener('keydown', escCheck);
   modalCloseBtn.addEventListener('click', closeBtn);
-  modalCloseBackdrop.addEventListener('click', onBackdropClick);
-
-  // setTimeout(modalCloseBackdrop.classList.remove('is-hidden'), 3000);
-  // modalCloseBackdrop.classList.remove('is-hidden');
+  backdropModal.addEventListener('click', onBackdropClick);
 }
 
 function removeModal() {
   const modalCloseBtn = document.querySelector('.modal-close');
-  const modalCloseBackdrop = document.querySelector('.backdrop-modal');
-  const modalConainer = document.querySelector('.modal-container');
+  const modal = document.querySelector('.modal-movie');
 
   body.classList.remove('body-no-scroll');
+  backdropModal.classList.add('is-hidden');
+
   filmsTemps.removlisten();
-  modalConainer.remove();
+
+  function removeMarkup() {
+    modal.remove();
+  }
+
+  setTimeout(removeMarkup, 400);
 
   document.removeEventListener('keydown', escCheck);
   modalCloseBtn.removeEventListener('click', closeBtn);
-  modalCloseBackdrop.removeEventListener('click', onBackdropClick);
+  backdropModal.removeEventListener('click', onBackdropClick);
 }
 
 function escCheck(e) {
@@ -64,7 +69,8 @@ function closeBtn(e) {
 }
 
 function onBackdropClick(e) {
-  if (e.currentTarget === e.target) {
-    removeModal();
+  if (e.currentTarget !== e.target) {
+    return;
   }
+  removeModal();
 }
