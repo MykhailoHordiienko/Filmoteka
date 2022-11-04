@@ -1576,7 +1576,7 @@ p {
 }
 
 .backdrop-modal {
-  animation: modalIn 1300ms;
+  animation: modalIn 300ms;
   position: fixed;
   z-index: 99;
   top: 0;
