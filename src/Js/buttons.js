@@ -211,14 +211,14 @@ export const filmsTemps = {
   },
 
   inWatched() {
-    this.watchedBtn.classList.add('orange')
-    this.queueBtn.classList.remove('orange');
+    this.watchedBtn.classList.add('orng')
+    this.queueBtn.classList.remove('orng');
     createlibraryGallery(this.massivout(this.LOCAL_STORAGE_KEY));
     this.changeOnLocMasW();
   },
   inQueue() {
-    this.queueBtn.classList.add('orange');
-    this.watchedBtn.classList.remove('orange');
+    this.queueBtn.classList.add('orng');
+    this.watchedBtn.classList.remove('orng');
     createlibraryGallery(this.massivout(this.LOCAL_STORAGE_KEY_QUEUE));
     this.changeOnLocMasq();
   },
