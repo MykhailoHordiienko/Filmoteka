@@ -117,9 +117,9 @@ padding-bottom: 10px;
     background: #ffffff;
         width: 528px;
         height: 581px;
-        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
-            0px 1px 1px rgba(0, 0, 0, 0.14),
-            0px 2px 1px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 2px 4px rgba(223, 87, 8, 0.12),
+            0px 2px 2px rgba(219, 86, 9, 0.14),
+            0px 4px 2px rgba(223, 81, 5, 0.2);
         border-radius: 4px;
         padding: 40px;
         position: absolute;
@@ -134,18 +134,21 @@ padding-bottom: 10px;
         .modal__footer{
             width: 300px;
             height: 350px;
+            padding: 20px;
         }
     }
-    @media screen and (min-width: 425px) and (max-width: 1199px) {
+    @media screen and (min-width: 425px) {
         .modal__footer{
         width: 400px;
-        height: 600px;
+        height: 500px;
     }}
-        @media screen and (min-width: 1200px) {
-        .modal__footer{
-        width: 528px;
-        height: 581px;
-    }}
+        @media screen and (min-width: 768px) {
+            .modal__footer {
+                width: 650px;
+                height: 500px;
+            }
+        }
+        
 
 
 .close-modal-button {
@@ -161,6 +164,10 @@ padding-bottom: 10px;
     transition-property: fill;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    @media screen and (min-width: 320px) and (max-width: 424px) {
+            width: 30px;
+            height: 30px;
+        }
 }
 
 .close-modal-button:hover,
@@ -179,6 +186,12 @@ padding-bottom: 10px;
     text-align: center;
     letter-spacing: 0.03em;
     color: #545454;
+    @media screen and (min-width: 320px) and (max-width: 424px) {
+            margin-bottom: 5px;
+            font-weight: 100;
+                font-size: 8px;
+                line-height: 8px;
+        }
 } 
 .visually-hidden {
     position: absolute;
@@ -194,17 +207,17 @@ padding-bottom: 10px;
         margin-left: auto;
         margin-right: auto;
  @media screen and (min-width: 320px) and (max-width: 767px) {
-     margin-bottom: 29px;
+     margin-bottom: 10px;
     width: 55px;
     height: 55px;
  }
 
  @media screen and (min-width: 768px) and (max-width: 1023px){
-     margin-bottom: 19px;
+     margin-bottom: 15px;
  }
 
  @media screen and (min-width: 1024px) {
-     margin-bottom: 15px;
+     margin-bottom: 20px;
  }
        
     }
@@ -213,24 +226,88 @@ padding-bottom: 10px;
     border-color: transparent;
     border: 1px;
     text-decoration: none;
+    cursor: pointer;
+    
  }
  .team-link:hover,
  .team-link:focus {
      border-color: #FF6B08;
      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
  }
-.team{
+
+
+.team-info__title{
+    color: #FF6B08;
+    font-family: Roboto;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: center;
+        margin-bottom: 20px;
+        
+}
+@media screen and (min-width: 425px) and (max-width: 767px){
+    .team-info__title{
+    font-size: 15px;
+        font-weight: 400;
+        line-height: 14px;
+        margin-bottom: 10px;}
+}
+@media screen and (min-width: 320px) and (max-width: 424px) {
+    .team-info__title {
+        font-size: 10px;
+        font-weight: 200;
+        line-height: 8px;
+        margin-bottom: 8px;
+    }
+}
+.team {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+
+@media screen and (min-width: 320px) and (max-width: 424px) {
+        flex-basis: calc((100% - 3 * 10px) / 3);
+        margin-left: -10px;
+
+    }
+
+@media screen and (min-width: 425px) and (max-width: 767px) {
+        flex-basis: calc((100% - 3 * 20px) / 3);
+        margin-left: -40px;
+        
+    }
+
     @media screen and (min-width: 768px) and (max-width: 1199px) {
-            flex-basis: calc((100% - 2 * 30px) / 2);
-        }
-    
-        @media screen and (min-width: 1200px) {
-            flex-basis: calc((100% - 3 * 30px) / 4);
-        }
+        flex-basis: calc((100% - 3 * 30px) / 3);
+        margin-left: -30px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        flex-basis: calc((100% - 4 * 30px) / 4);
+        margin-left: -30px;
+    }
 }
-// .team-member{
-//     display: flex;
-//     flex-direction: column;
-// }
+.team-member{
+    margin-bottom: 30px;
+    margin-left: 30px;
+    align-items: center;
+    
+    @media screen and (min-width: 425px) and (max-width: 767px) {
+            margin-left: 20px;
+            margin-bottom: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+        }
+                @media screen and (min-width: 320px) and (max-width: 424px) {
+                    margin-left: 10px;
+                    margin-bottom: 10px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: column;
+                    align-items: center;
+                }
+}

@@ -1,4 +1,4 @@
-## Проект сайта "Filmoteka"
+## "Filmoteka"
 
 _Hi!_ :wave:
 
@@ -48,3 +48,5 @@ movie listings.
 
 As a result of coordinated teamwork :handshake: we got our project: ⬇
 [_Welcome!_](https://mykhailohordiienko.github.io/Filmoteka/) ⬇
+
+<a href="https://mykhailohordiienko.github.io/Filmoteka/"><img src="./src/images/D03A0D07-A903-49FC-9EA0-B3765F393751.jpeg" alt="Filmoteka" border="0"></a>
