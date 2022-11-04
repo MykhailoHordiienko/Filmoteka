@@ -16,7 +16,6 @@ export const refsHed={
     pagList:document.querySelector('#list'),
     smBox:document.querySelector('.header__error'),
 }
-console.log(refsHed);
 
 refsHed.homeL.addEventListener('click', openHome);
 refsHed.libraryL.addEventListener('click', openlibrary);

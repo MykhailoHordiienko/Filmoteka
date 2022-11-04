@@ -63,7 +63,6 @@
         },
      
         refresh(){
-            console.log(this.onLocMas)
             if (this.onLocMas==='QUEUE'){this.queueBtn.click(); return}
             if (this.onLocMas==='WATCHED') {this.watchedBtn.click(); return};
         },
@@ -84,7 +83,6 @@
                 this.arrayF = JSON.parse(localStorage.getItem(locstorkey));
                 this.arrayF.push(object)
                 localStorage.setItem (locstorkey, JSON.stringify(this.arrayF));  
-                console.log('фільм додано')
                 refsBtn.innerText = 'REMOVE TO ' + tekst;
                 if (this.onLibrary){
                     this.refresh();
@@ -100,9 +98,7 @@
                 this.arrayF = JSON.parse(localStorage.getItem(locstorkey));
                 this.arrayF.splice(deleteP, 1)
                 localStorage.setItem (locstorkey, JSON.stringify(this.arrayF));
-                console.log('фільм видалено')
                 refsBtn.innerText = 'ADD TO ' + tekst;   
-                console.log(this.onLibrary);
               if (this.onLibrary){
                 this.refresh();
               }
@@ -135,7 +131,7 @@
                     console.log(this.resultSearch);
                  if (this.resultSearch > - 1){
                         // --- Фільм знаходиться в збережених у памяті кнопка remove під номером - ", resultSearch
-                        refsBtn.innerText = 'REMOVE TO ' + tekst;
+                        refsBtn.innerText = 'REMOVE FROM ' + tekst;
                     return this.resultSearch;
                     } else
                     {
