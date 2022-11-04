@@ -170,7 +170,6 @@ export const filmsTemps = {
       this.resultSearch = this.arrayFilms.findIndex(
         option => option.id === object.id
       );
-      console.log(this.resultSearch);
       if (this.resultSearch > -1) {
         // --- Фільм знаходиться в збережених у памяті кнопка remove під номером - ", resultSearch
         refsBtn.innerText = 'REMOVE FROM ' + tekst;
@@ -207,7 +206,7 @@ export const filmsTemps = {
   },
 
   inWatched() {
-    this.watchedBtn.classList.add('orng')
+    this.watchedBtn.classList.add('orng');
     this.queueBtn.classList.remove('orng');
     createlibraryGallery(this.massivout(this.LOCAL_STORAGE_KEY));
     this.changeOnLocMasW();
