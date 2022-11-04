@@ -8,22 +8,29 @@
         <span class="header-logo-name">Filmoteka</span>
       </a>
     </div>
-    <include src="./partials/auth.html"></include> 
+    <include src="./partials/auth.html"></include>
     <nav class="header-nav">
       <ul class="header-nav-list">
         <li class="header-nav-item">
           <a id="homeL" href="#home" class="header-nav-link current">HOME</a>
         </li>
         <li class="header-nav-item">
-          <a id="libraryL" href="#home" class="header-nav-link second">MY LIBRARY</a>
+          <a id="libraryL" href="#home" class="header-nav-link second"
+            >MY LIBRARY</a
+          >
         </li>
       </ul>
     </nav>
   </div>
 
-  <form id="search" class="input-container header__form ">
-    <input type="text" id="search-box" class="search-box-input header__form-input" placeholder="Movie search"
-      autocomplete="off" />
+  <form id="search" class="input-container header__form">
+    <input
+      type="text"
+      id="search-box"
+      class="search-box-input header__form-input"
+      placeholder="Movie search"
+      autocomplete="off"
+    />
     <button type="submit" class="input-search-button">
       <svg width="12" height="12" class="search-box-input-icon">
         <use href="./images/symbol-defs.svg#icon-search"></use>
@@ -35,7 +42,7 @@
     <button class="header-button queue-btn">QUEUE</button>
   </div>
 
-  <div class="header__error js-header__error ">
+  <div class="header__error js-header__error">
     <p class="header__error-text is-hidden">
       Search result not successful. Enter the correct movie name and try again
     </p>
