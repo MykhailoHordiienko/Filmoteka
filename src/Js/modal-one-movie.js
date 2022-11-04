@@ -22,18 +22,20 @@ function createModal(movie) {
   body.insertAdjacentHTML('beforeend', modalMarkup(movie));
   body.classList.add('body-no-scroll');
 
-  filmsTemps.statusBtn();
-
   const modalCloseBtn = document.querySelector('.modal-close');
   const modalCloseBackdrop = document.querySelector('.backdrop-modal');
+
+  filmsTemps.statusBtn();
 
   document.addEventListener('keydown', escCheck);
   modalCloseBtn.addEventListener('click', closeBtn);
   modalCloseBackdrop.addEventListener('click', onBackdropClick);
+
+  // setTimeout(modalCloseBackdrop.classList.remove('is-hidden'), 3000);
+  // modalCloseBackdrop.classList.remove('is-hidden');
 }
 
 function removeModal() {
-
   const modalCloseBtn = document.querySelector('.modal-close');
   const modalCloseBackdrop = document.querySelector('.backdrop-modal');
   const modalConainer = document.querySelector('.modal-container');
@@ -45,7 +47,6 @@ function removeModal() {
   document.removeEventListener('keydown', escCheck);
   modalCloseBtn.removeEventListener('click', closeBtn);
   modalCloseBackdrop.removeEventListener('click', onBackdropClick);
-
 }
 
 function escCheck(e) {

@@ -1,7 +1,7 @@
 export default function modalMarkup(movie) {
   return `
   <div class="modal-container">
-    <div class="backdrop-modal" >
+    <div class="backdrop-modal">
       <div class="modal-movie">
         <button type="button" class="modal-close" >
           <span class="material-symbols-outlined">close</span>
