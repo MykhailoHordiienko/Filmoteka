@@ -1,12 +1,10 @@
-
 // import cardTpl from './card';
 import debounce from 'lodash.debounce';
 import fetchApiFilms from './apiService';
 import { startSpin, stopSpin } from './spinner';
 import { renderInfoMsg, hideInfoImg, renderEmptyGalleryMsg } from './informing';
 import { getMaxPages, resetPagination } from './pagination';
-import  { cardTpl } from './card';
-
+import { cardTpl } from './card';
 
 const fetchFilms = new fetchApiFilms();
 
@@ -43,7 +41,13 @@ function createPopularMoviesGallery() {
   getMaxPages();
   startSpin();
 
-  fetchFilms.fetchPopularMovies().then(makeGalleryMarkup).catch(console.log).finally(stopSpin);
+  fetchFilms
+    .fetchPopularMovies()
+    .then(makeGalleryMarkup)
+    .catch(console.log)
+    .finally(stopSpin);
+
+  refs.pagination.classList.remove('is-hidden');
 }
 
 // ----- home рендер по результату пошуку
@@ -116,8 +120,12 @@ function preventOnEnterSubmit(event) {
 }
 
 function removeHiddenfromCardEl() {
-  document.querySelectorAll('.film-average').forEach(el => el.classList.remove('is-hidden'));
-  document.querySelectorAll('.card-delete-btn').forEach(el => el.classList.remove('is-hidden'));
+  document
+    .querySelectorAll('.film-average')
+    .forEach(el => el.classList.remove('is-hidden'));
+  document
+    .querySelectorAll('.card-delete-btn')
+    .forEach(el => el.classList.remove('is-hidden'));
   refs.pagination.classList.add('is-hidden'); //для скриття пагинації розкоментувати
 }
 
@@ -127,14 +135,14 @@ function createlibraryGallery(movies) {
   startSpin();
   clearGalleryMarkup();
   getMaxPages();
-      if (movies.length === 0) {
-        renderInfoMsg();
-        renderEmptyGalleryMsg('Film not found');
-        removeHiddenfromCardEl();
-      } else {
-        makeGalleryMarkup(movies);
-      }
-   stopSpin()
+  if (movies.length === 0) {
+    renderInfoMsg();
+    renderEmptyGalleryMsg('Film not found');
+    removeHiddenfromCardEl();
+  } else {
+    makeGalleryMarkup(movies);
+  }
+  stopSpin();
 }
 
 export {
@@ -146,4 +154,3 @@ export {
   createlibraryGallery,
   refs,
 };
-
